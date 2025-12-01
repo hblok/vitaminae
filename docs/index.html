@@ -6,397 +6,63 @@
     <title>Vitamina E - Spanischkurse in Zürich</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* CSS Variables - Color Palette */
-        :root {
-            --color-teal: #1FB4A5;
-            --color-teal-deep: #0F8D8A;
-            --color-coral: #EF4F4F;
-            --color-coral-deep: #D93A38;
-            --color-magenta: #CF2E76;
-            --color-green: #2FB54A;
-            --color-yellow: #F5B600;
-            --color-navy: #1F2A44;
-            --color-orange: #F47A1F;
-            --color-purple: #7D3FB2;
-            --color-text: #333B44;
-            --color-bg: #FFFFFF;
-            --color-teal-tint: #EAF7F6;
-            --color-coral-tint: #FDEFEF;
-            --color-yellow-tint: #FFF7E6;
-        }
-
-        /* Global Reset & Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Nunito', sans-serif;
-            font-size: 17px;
-            line-height: 1.7;
-            color: var(--color-text);
-            background-color: var(--color-bg);
-        }
-
-        /* Typography */
-        h1, h2, h3 {
-            font-family: 'Fraunces', serif;
-            color: var(--color-navy);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--color-teal);
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-        }
-
-        a {
-            color: var(--color-teal);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        a:hover {
-            color: var(--color-coral);
-        }
-
-        /* Container */
-        .container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Header/Hero Section */
-        .hero {
-            background-color: var(--color-bg);
-            padding: 64px 24px 80px;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            color: var(--color-coral);
-            font-weight: 600;
-            font-style: italic;
-        }
-
-        .hero-decoration {
-            margin: 48px 0 0;
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .decorative-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        .dot-teal { background-color: var(--color-teal); }
-        .dot-coral { background-color: var(--color-coral); }
-        .dot-yellow { background-color: var(--color-yellow); }
-        .dot-magenta { background-color: var(--color-magenta); }
-        .dot-green { background-color: var(--color-green); }
-
-        /* Section Styling */
-        section {
-            padding: 80px 24px;
-        }
-
-        .section-about {
-            background-color: var(--color-teal-tint);
-        }
-
-        .section-teacher {
-            background-color: var(--color-bg);
-        }
-
-        .section-courses {
-            background-color: var(--color-yellow-tint);
-        }
-
-        .section-contact {
-            background-color: var(--color-coral-tint);
-        }
-
-        /* About & Teacher Content */
-        .content-box {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .teacher-intro {
-            background-color: var(--color-teal-tint);
-            padding: 32px;
-            border-radius: 8px;
-            border-left: 4px solid var(--color-coral);
-        }
-
-        /* Courses Grid */
-        .courses-intro {
-            text-align: center;
-            margin-bottom: 48px;
-            font-size: 1.1rem;
-            color: var(--color-navy);
-            font-weight: 600;
-        }
-
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
-            max-width: 1140px;
-            margin: 0 auto;
-        }
-
-        .course-card {
-            background-color: var(--color-bg);
-            padding: 32px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(31, 42, 68, 0.08);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border-top: 4px solid var(--color-teal);
-        }
-
-        .course-card:nth-child(2) {
-            border-top-color: var(--color-coral);
-        }
-
-        .course-card:nth-child(3) {
-            border-top-color: var(--color-magenta);
-        }
-
-        .course-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(31, 42, 68, 0.12);
-        }
-
-        .course-level {
-            display: inline-block;
-            background-color: var(--color-navy);
-            color: var(--color-bg);
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .course-description {
-            margin: 16px 0 24px;
-            color: var(--color-text);
-        }
-
-        .course-locations {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .location-tag {
-            background-color: var(--color-teal-tint);
-            color: var(--color-teal-deep);
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-info {
-            background-color: var(--color-bg);
-            padding: 40px;
-            border-radius: 8px;
-            margin-top: 32px;
-        }
-
-        .contact-item {
-            margin: 24px 0;
-        }
-
-        .contact-label {
-            font-weight: 600;
-            color: var(--color-navy);
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-value {
-            font-size: 1.3rem;
-            color: var(--color-teal);
-            font-weight: 600;
-        }
-
-        .contact-value a {
-            color: var(--color-teal);
-        }
-
-        .contact-value a:hover {
-            color: var(--color-coral);
-        }
-
-        .courses-notice {
-            background-color: var(--color-yellow);
-            color: var(--color-navy);
-            padding: 16px 24px;
-            border-radius: 8px;
-            margin-top: 32px;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--color-navy);
-            color: var(--color-bg);
-            text-align: center;
-            padding: 32px 24px;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 0.95rem;
-        }
-
-        /* Decorative Elements */
-        .section-divider {
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--color-teal), transparent);
-            margin: 0 auto;
-            max-width: 200px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .subtitle {
-                font-size: 1.2rem;
-            }
-
-            section {
-                padding: 48px 16px;
-            }
-
-            .courses-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                padding: 24px;
-            }
-
-            .contact-value {
-                font-size: 1.1rem;
-            }
-        }
-
-        /* Accessibility */
-        a:focus, button:focus {
-            outline: 2px solid var(--color-teal);
-            outline-offset: 2px;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fraunces:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Vitamina E</h1>
-            <p class="subtitle">Spanish, das inspiriert</p>
-            <div class="hero-decoration">
-                <span class="decorative-dot dot-teal"></span>
-                <span class="decorative-dot dot-coral"></span>
-                <span class="decorative-dot dot-yellow"></span>
-                <span class="decorative-dot dot-magenta"></span>
-                <span class="decorative-dot dot-green"></span>
-                <span class="decorative-dot dot-coral"></span>
-                <span class="decorative-dot dot-teal"></span>
-            </div>
-        </div>
-    </section>
+    <!-- Header with Image -->
+    <div class="header-image-container">
+        <img src="header.png" alt="Vitamina E - Spanish das inspiriert" class="header-image">
+    </div>
+
+    <!-- Decorative Border -->
+    <div class="otomi-border"></div>
+
+    <!-- Decorative Shape Pattern -->
+    <div class="dot-pattern">
+        <span class="decorative-shape shape-flower bg-teal"></span>
+        <span class="decorative-shape shape-circle bg-coral"></span>
+        <span class="decorative-shape shape-petal bg-magenta"></span>
+        <span class="decorative-shape shape-leaf bg-yellow"></span>
+        <span class="decorative-shape shape-circle bg-green"></span>
+        <span class="decorative-shape shape-flower bg-purple"></span>
+        <span class="decorative-shape shape-petal bg-orange"></span>
+    </div>
 
     <!-- About Section -->
     <section class="section-about">
+        <div class="floating-shapes">
+            <div class="floating-shape decorative-shape shape-flower bg-teal" style="width: 100px; height: 100px;"></div>
+            <div class="floating-shape decorative-shape shape-circle bg-coral" style="width: 80px; height: 80px;"></div>
+            <div class="floating-shape decorative-shape shape-leaf bg-green" style="width: 90px; height: 90px;"></div>
+        </div>
         <div class="container">
             <div class="content-box">
                 <h2>Über Vitamina E</h2>
-                <p>Willkommen bei Vitamina E – Ihrer Sprachschule für Spanisch in Zürich! Wir bieten inspirierende und lebendige Spanischkurse, die nicht nur die Sprache vermitteln, sondern auch die reiche Kultur der spanischsprachigen Welt näherbringen. Ob Sie Anfänger sind oder Ihre Kenntnisse vertiefen möchten, bei uns finden Sie den passenden Kurs.</p>
+                <p><strong>Willkommen bei Vitamina E</strong> – Ihrer Sprachschule für Spanisch in Zürich! Wir bieten inspirierende und lebendige Spanischkurse, die nicht nur die Sprache vermitteln, sondern auch die reiche Kultur der spanischsprachigen Welt näherbringen. Ob Sie Anfänger sind oder Ihre Kenntnisse vertiefen möchten, bei uns finden Sie den passenden Kurs.</p>
                 
-                <p>Unsere Kurse sind so gestaltet, dass Sie in einer entspannten und motivierenden Atmosphäre lernen können. Wir legen Wert auf kommunikative Methoden und praktische Anwendung, damit Sie schnell Fortschritte machen und sich sicher auf Spanisch ausdrücken können. Mit flexiblen Standorten in Manegg, Stauffacher und Online-Optionen passen wir uns Ihrem Lebensstil an.</p>
+                <p>Unsere Kurse sind so gestaltet, dass Sie in einer <strong>entspannten und motivierenden Atmosphäre</strong> lernen können. Wir legen Wert auf kommunikative Methoden und praktische Anwendung, damit Sie schnell Fortschritte machen und sich sicher auf Spanisch ausdrücken können. Mit flexiblen Standorten in Manegg, Stauffacher und Online-Optionen passen wir uns Ihrem Lebensstil an.</p>
                 
-                <p>Entdecken Sie die Freude am Spanischlernen mit Vitamina E – denn Sprache ist mehr als Worte, sie ist Inspiration, Verbindung und Lebensfreude!</p>
+                <p>Entdecken Sie die <strong>Freude am Spanischlernen</strong> mit Vitamina E – denn Sprache ist mehr als Worte, sie ist Inspiration, Verbindung und Lebensfreude! Tauchen Sie ein in die farbenfrohe Welt des Spanischen und erleben Sie Unterricht, der genauso lebendig ist wie die Kultur, die wir vermitteln.</p>
             </div>
         </div>
     </section>
 
     <!-- Teacher Section -->
     <section class="section-teacher">
+        <div class="floating-shapes">
+            <div class="floating-shape decorative-shape shape-petal bg-magenta" style="width: 100px; height: 100px;"></div>
+            <div class="floating-shape decorative-shape shape-flower bg-yellow" style="width: 80px; height: 80px;"></div>
+            <div class="floating-shape decorative-shape shape-circle bg-purple" style="width: 90px; height: 90px;"></div>
+        </div>
         <div class="container">
             <div class="content-box">
                 <h2>Ihre Lehrerin</h2>
                 <div class="teacher-intro">
-                    <p>Hola! Ich bin Ihre erfahrene Spanischlehrerin aus Mexiko und bringe die authentische Sprache und Kultur direkt in Ihren Unterricht. Mit langjähriger Erfahrung im Sprachunterricht helfe ich Ihnen, Spanisch auf natürliche und effektive Weise zu lernen. Meine Leidenschaft für Sprachen und meine mexikanischen Wurzeln ermöglichen es mir, Ihnen nicht nur Grammatik und Vokabeln beizubringen, sondern auch ein tiefes Verständnis für die hispanische Kultur zu vermitteln.</p>
+                    <p><strong>¡Hola!</strong> Ich bin Ihre erfahrene Spanischlehrerin aus Mexiko und bringe die authentische Sprache und Kultur direkt in Ihren Unterricht. Mit <strong>langjähriger Erfahrung im Sprachunterricht</strong> helfe ich Ihnen, Spanisch auf natürliche und effektive Weise zu lernen. Meine Leidenschaft für Sprachen und meine mexikanischen Wurzeln ermöglichen es mir, Ihnen nicht nur Grammatik und Vokabeln beizubringen, sondern auch ein tiefes Verständnis für die hispanische Kultur zu vermitteln.</p>
                     
-                    <p>Ich gestalte meinen Unterricht interaktiv, dynamisch und angepasst an Ihre individuellen Bedürfnisse. Ob Sie Spanisch für den Beruf, die Reise oder aus persönlichem Interesse lernen möchten – gemeinsam erreichen wir Ihre Ziele. ¡Nos vemos en clase!</p>
+                    <p>Ich gestalte meinen Unterricht <strong>interaktiv, dynamisch und angepasst</strong> an Ihre individuellen Bedürfnisse. Ob Sie Spanisch für den Beruf, die Reise oder aus persönlichem Interesse lernen möchten – gemeinsam erreichen wir Ihre Ziele. Mit Methoden, die so farbenfroh und lebendig sind wie die mexikanische Kultur selbst, machen wir jede Lektion zu einem unvergesslichen Erlebnis. <strong>¡Nos vemos en clase!</strong></p>
                 </div>
             </div>
         </div>
@@ -404,20 +70,25 @@
 
     <!-- Courses Section -->
     <section class="section-courses">
+        <div class="floating-shapes">
+            <div class="floating-shape decorative-shape shape-leaf bg-green" style="width: 100px; height: 100px;"></div>
+            <div class="floating-shape decorative-shape shape-circle bg-orange" style="width: 80px; height: 80px;"></div>
+            <div class="floating-shape decorative-shape shape-flower bg-teal" style="width: 90px; height: 90px;"></div>
+        </div>
         <div class="container">
             <h2>Unsere Kurse</h2>
-            <p class="courses-intro">Alle Niveaustufen (A1, A2, B1, B2, C1, C2) verfügbar</p>
+            <p class="courses-intro">✦ Alle Niveaustufen (A1, A2, B1, B2, C1, C2) verfügbar ✦</p>
             
             <div class="courses-grid">
                 <!-- Course 1 -->
                 <div class="course-card">
                     <span class="course-level">A1 / A2</span>
                     <h3>Spanisch für Anfänger</h3>
-                    <p class="course-description">Perfekt für Einsteiger! Lernen Sie die Grundlagen der spanischen Sprache – von der Aussprache über einfache Konversation bis hin zu alltäglichen Situationen. Dieser Kurs legt ein solides Fundament für Ihre Spanischreise.</p>
+                    <p class="course-description">Perfekt für Einsteiger! Lernen Sie die <strong>Grundlagen der spanischen Sprache</strong> – von der Aussprache über einfache Konversation bis hin zu alltäglichen Situationen. Dieser Kurs legt ein solides Fundament für Ihre Spanischreise und bringt Ihnen die Sprache mit viel Freude und Farbe näher.</p>
                     <div class="course-locations">
-                        <span class="location-tag">Manegg</span>
-                        <span class="location-tag">Stauffacher</span>
-                        <span class="location-tag">Online</span>
+                        <span class="location-tag">📍 Manegg</span>
+                        <span class="location-tag">📍 Stauffacher</span>
+                        <span class="location-tag">💻 Online</span>
                     </div>
                 </div>
 
@@ -425,11 +96,11 @@
                 <div class="course-card">
                     <span class="course-level">B1 / B2</span>
                     <h3>Spanisch Konversation</h3>
-                    <p class="course-description">Vertiefen Sie Ihre Sprachkenntnisse durch lebendige Gespräche und authentische Kommunikation. Erweitern Sie Ihren Wortschatz, verbessern Sie Ihre Grammatik und gewinnen Sie Selbstvertrauen beim Sprechen in realen Situationen.</p>
+                    <p class="course-description">Vertiefen Sie Ihre Sprachkenntnisse durch <strong>lebendige Gespräche und authentische Kommunikation</strong>. Erweitern Sie Ihren Wortschatz, verbessern Sie Ihre Grammatik und gewinnen Sie Selbstvertrauen beim Sprechen in realen Situationen. Tauchen Sie ein in die Vielfalt der spanischsprachigen Welt.</p>
                     <div class="course-locations">
-                        <span class="location-tag">Manegg</span>
-                        <span class="location-tag">Stauffacher</span>
-                        <span class="location-tag">Online</span>
+                        <span class="location-tag">📍 Manegg</span>
+                        <span class="location-tag">📍 Stauffacher</span>
+                        <span class="location-tag">💻 Online</span>
                     </div>
                 </div>
 
@@ -437,11 +108,11 @@
                 <div class="course-card">
                     <span class="course-level">C1 / C2</span>
                     <h3>Fortgeschrittenes Spanisch</h3>
-                    <p class="course-description">Für fortgeschrittene Lernende, die ihre Sprachkenntnisse perfektionieren möchten. Fokus auf komplexe Grammatik, anspruchsvolle Texte, kulturelle Themen und fließende Kommunikation auf hohem Niveau. Bereiten Sie sich auf professionelle oder akademische Herausforderungen vor.</p>
+                    <p class="course-description">Für fortgeschrittene Lernende, die ihre Sprachkenntnisse perfektionieren möchten. Fokus auf <strong>komplexe Grammatik, anspruchsvolle Texte</strong> und kulturelle Themen. Erreichen Sie fließende Kommunikation auf hohem Niveau und bereiten Sie sich auf professionelle oder akademische Herausforderungen vor.</p>
                     <div class="course-locations">
-                        <span class="location-tag">Manegg</span>
-                        <span class="location-tag">Stauffacher</span>
-                        <span class="location-tag">Online</span>
+                        <span class="location-tag">📍 Manegg</span>
+                        <span class="location-tag">📍 Stauffacher</span>
+                        <span class="location-tag">💻 Online</span>
                     </div>
                 </div>
             </div>
@@ -450,6 +121,11 @@
 
     <!-- Contact Section -->
     <section class="section-contact">
+        <div class="floating-shapes">
+            <div class="floating-shape decorative-shape shape-petal bg-coral" style="width: 100px; height: 100px;"></div>
+            <div class="floating-shape decorative-shape shape-flower bg-magenta" style="width: 80px; height: 80px;"></div>
+            <div class="floating-shape decorative-shape shape-circle bg-yellow" style="width: 90px; height: 90px;"></div>
+        </div>
         <div class="container">
             <div class="contact-content">
                 <h2>Kontakt</h2>
@@ -459,14 +135,14 @@
                     <div class="contact-item">
                         <span class="contact-label">Telefon</span>
                         <div class="contact-value">
-                            <a href="tel:+41764055129">076 405 51 29</a>
+                            <a href="tel:"></a>
                         </div>
                     </div>
 
                     <div class="contact-item">
                         <span class="contact-label">E-Mail</span>
                         <div class="contact-value">
-                            <a href="mailto:info.vitaminae@gmail.com">info.vitaminae@gmail.com</a>
+                            <a href="mailto:"></a>
                         </div>
                     </div>
 
@@ -489,6 +165,13 @@
     <footer>
         <div class="container">
             <p>© 2024 Vitamina E - Spanischkurse in Zürich. Alle Rechte vorbehalten.</p>
+            <div class="footer-decoration">
+                <span class="footer-shape shape-flower bg-teal"></span>
+                <span class="footer-shape shape-circle bg-coral"></span>
+                <span class="footer-shape shape-petal bg-magenta"></span>
+                <span class="footer-shape shape-leaf bg-yellow"></span>
+                <span class="footer-shape shape-circle bg-green"></span>
+            </div>
         </div>
     </footer>
 
