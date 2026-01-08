@@ -52,6 +52,12 @@ body {
     overflow-x: hidden;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* ============================================
    Typography
    ============================================ */
