@@ -399,6 +399,28 @@ section::before {
     background: var(--color-green);
 }
 
+/* DELE */
+.course-card:nth-child(5) {
+    color: var(--color-orange2);            
+    border-color: var(--color-orange);
+}
+
+.course-card:nth-child(5)::before {
+    background: var(--color-green);
+}
+
+/* Firmenkurse */
+.course-card:nth-child(6) {
+    color: var(--color-orange2);            
+    border-color: var(--color-orange);
+}
+
+.course-card:nth-child(6)::before {
+    background: var(--color-green);
+}
+
+
+
 .course-card:hover {
     transform: translateY(-8px) rotate(-1deg);
     box-shadow: 
