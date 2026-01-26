@@ -1,0 +1,3 @@
+
+- Clone command: `gh repo clone hblok/vitaminae`
+- For pushing changes, use: `git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/hblok/vitaminae.git`
