@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprachkurs Angebot</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #e8e8e8;
+            color: #333333;
+            line-height: 1.4;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Main Container - Centered and Compact */
+        .main-container {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        /* Border Box Container */
+        .border-box {
+            background-color: #ffffff;
+            border: 2px solid #20B2AA;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative corner accent */
+        .border-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #20B2AA 0%, #32CD32 50%, #FF8C00 100%);
+        }
+
+        /* Headline */
+        .headline {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #20B2AA;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .headline::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #20B2AA, #32CD32, #FF8C00);
+            border-radius: 2px;
+        }
+
+        /* Two-Column Grid Layout */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        /* Individual Course Card */
+        .course-card {
+            background-color: #f8f8f8;
+        border: 1px solid #e0e0e0;
+	max-width: 12em;
+            border-radius: 16px;
+            /*padding: 10px;*/
+        }
+
+        /* Header Banner */
+        .header-banner {
+            text-align: center;
+            margin: 0 0 8px 0;
+            padding: 0;
+            background: transparent;
+        }
+
+        /* Header Image */
+        .header-image {
+            max-width: 100%;
+
+	height: 3.1em;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            /*max-width: 180px;*/
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+	.header-text {
+
+	position: absolute;
+	font-family: Varela Round, sans-serif;
+	font-size: 1.7em;
+	transform: translate(-50%, -123%);
+	color: white;
+	font-weight: bold;
+	white-space: nowrap;
+	}	
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 0;
+            margin-bottom: 8px;
+        }
+
+        /* Arrow-shaped Pricing Banner */
+        .pricing-banner {
+            /*background-color: #FF8C00;*/
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            position: relative;
+            /*margin-bottom: 6px;*/
+/*            border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+	*/
+            line-height: 1.3;
+        }
+
+
+.pricing-banner {
+	position: relative;
+	
+    display: inline-block;
+}
+
+	.pricing-image {
+	max-width: 10em;
+    display: block;
+}
+
+	.pricing-text {
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+	
+	font-size: 0.8em;
+	transform: translate(-49%, -70%);
+
+	color: white;
+	font-weight: bold;
+	white-space: nowrap;
+	}
+
+	
+/*
+        .pricing-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #FF8C00;
+        }
+
+        .pricing-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            font-size: 0.8em;
+        }
+
+            .pricing-image {
+	        max-width: 200px;
+            }		
+*/
+        /* Package Banner */
+        .package-banner {
+
+            color: #ffffff;
+            text-align: center;
+            padding: 6px 8px;
+            font-size: 0.85em;
+            font-weight: bold;
+            border-radius: 5px;
+            /*margin-top: 10px;*/
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            line-height: 1.3;
+        }
+
+        .package-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            font-size: 0.9em;
+        }
+
+	.package-image {
+	max-width: 172px;
+	}
+
+	.package-text {
+	position: absolute;
+
+	
+	font-size: 0.78em;
+	transform: translate(-127%, -17%);
+
+	color: darkslategray;
+	font-weight: bold;
+	white-space: pre;	
+	}
+
+        /* Features Section */
+        .features-section {
+            padding: 0;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        /* Feature Items - Now as a unified block */
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+            padding: 6px 8px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #f0f0f0;
+            /*border-left: 2px solid #20B2AA;*/
+            font-size: 0.75em;
+            transition: background-color 0.2s ease;
+        }
+
+        .feature-item:hover {
+            background-color: #f8f8f8;
+        }
+
+        /* Remove bottom border from last item */
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Feature Icon */
+        .feature-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 6px;
+            border-radius: 50%;
+            font-size: 0.9em;
+            background-color: #e8f4f8;
+        }
+
+	.feature-image {
+
+	max-width: 2.5em;
+	margin-right: 1em;
+	}
+
+        .feature-text {
+            flex-grow: 1;
+            color: #444;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        /* Specific Icon Colors */
+        .icon-speech { color: #20B2AA; }
+        .icon-group { color: #FF8C00; }
+        .icon-book { color: #4169E1; }
+        .icon-person { color: #32CD32; }
+        .icon-building { color: #9370DB; }
+        .icon-fun { color: #FF1493; }
+
+        /* Description Section */
+        .description-section {
+            background-color: #f0fdf9;
+            border: 1px solid #20B2AA;
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 10px;
+        }
+
+        .description-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #20B2AA;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .description-text {
+            font-size: 0.85em;
+            color: #444;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        /* Benefits List - Inline Style */
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .benefit-item {
+            display: block;
+            margin-right: 8px;
+            margin-bottom: 4px;
+            font-size: 0.8em;
+            color: #333;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .benefit-icon {
+            margin-right: 3px;
+            font-size: 1em;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 8px;
+            margin-top: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-text {
+            color: #666;
+            font-size: 0.7em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            body {
+                padding: 10px;
+            }
+
+            .main-container {
+                max-width: 100%;
+            }
+
+            .border-box {
+                padding: 12px;
+                border-radius: 8px;
+            }
+
+            .headline {
+                font-size: 1.5em;
+                margin-bottom: 12px;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .header-image {
+                max-width: 200px;
+            }
+
+            .pricing-banner {
+                font-size: 1em;
+                padding: 6px 10px;
+            }
+
+            .pricing-image {
+	        max-width: 200px;
+            }	
+
+            .package-banner {
+                font-size: 0.8em;
+            }
+
+            .feature-item {
+                padding: 5px 6px;
+                font-size: 0.7em;
+            }
+
+            .feature-icon {
+                width: 24px;
+                height: 24px;
+                font-size: 0.8em;
+            }
+
+            .description-section {
+                padding: 10px;
+            }
+
+            .description-text {
+                font-size: 0.8em;
+            }
+
+            .benefit-item {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+        
+        <!-- Border Box Container -->
+        <div class="border-box">
+            
+            <!-- Headline -->
+            <h1 class="headline">Privatkurse</h1>
+
+            <!-- Two-Column Grid -->
+            <div class="courses-grid">
+                
+                <!-- First Column: 60 Minutes -->
+                <div class="course-card">
+                    <!-- Header Section -->
+                    <header class="header-banner">
+                      <img src="blue_min_t.png" alt="60 Minuten" class="header-image">
+		      <span class="header-text">60 Minuten</span>
+                    </header>
+
+                    <!-- Pricing Section -->
+                    <section class="pricing-section">
+                        <!-- Hourly Pricing Banner -->
+                        <div class="pricing-banner">
+			  <img src="arrow_orange2.png" alt="price" class="pricing-image">
+			  <span class="pricing-text">54 CHF pro Stunde</span>
+                        </div>
+
+                        <!-- Package Pricing Banner -->
+                        <div class="package-banner">
+			  <img src="price_group_t.png" alt="price" class="package-image">
+			  <span class="package-text">
+			    10er-Paket: 510 CHF
+			    (Spare 30 CHF)</span>
+                        </div>
+                    </section>
+
+                    <!-- Features Section - Now as unified block -->
+                    <section class="features-section">
+                        
+                        <!-- Feature 1: Dynamic Interaction -->
+                        <div class="feature-item">
+                            <img src="chat_bubble2.png" class="feature-image icon-speech">
+                            <div class="feature-text">Dynamische Interaktion & praxisnahe Grammatik</div>
+                        </div>
+
+                        <!-- Feature 2: Small Groups -->
+                        <div class="feature-item">
+                            <img src="group3.png" alt="👥" class="feature-image icon-group">			  
+                            <div class="feature-text">Kleine Gruppen für volle Aufmerksamkeit</div>
+                        </div>
+
+                        <!-- Feature 3: Supplementary Materials -->
+                        <div class="feature-item">
+                          <img src="books2.png" alt="📚" class="feature-image icon-book">
+                          <div class="feature-text">Ergänzende Materialien (Kursbuch separat)</div>
+                        </div>
+
+                        <!-- Feature 4: Individual Support -->
+                        <div class="feature-item">
+			  <img src="individual_support_t.png" alt="🎯" class="feature-image icon-person">
+                            <div class="feature-text">Individuelle Betreuung</div>
+                        </div>
+
+                        <!-- Feature 5: Room Inclusive -->
+                        <div class="feature-item">
+                          <img src="house_t.png" alt="🏢" class="feature-image icon-building">
+                            <div class="feature-text">Raum inklusive</div>
+                        </div>
+
+                        <!-- Feature 6: Lots of Fun -->
+                        <div class="feature-item">
+                          <img src="party_t.png" alt="🎉" class="feature-image icon-func">			  
+                          <div class="feature-text">Jede Menge Spaß!</div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Second Column: 90 Minutes -->
+                <div class="course-card">
+                    <!-- Header Section -->
+                    <header class="header-banner">
+                      <img src="red_min_t.png" alt="90 Minuten" class="header-image">
+		      <span class="header-text">90 Minuten</span>		      
+                    </header>
+
+                    <!-- Pricing Section -->
+                    <section class="pricing-section">
+                        <!-- Hourly Pricing Banner -->
+                        <div class="pricing-banner">
+			  <img src="arrow_orange2.png" alt="price" class="pricing-image">
+			  <span class="pricing-text">74 CHF pro Stunde</span>
+                        </div>
+
+                        <!-- Package Pricing Banner -->
+                        <div class="package-banner">
+			  <img src="price_group_t.png" alt="price" class="package-image">
+			  <span class="package-text">
+			    10er-Paket: 700 CHF
+			    (Spare 40 CHF)</span>
+                        </div>
+                    </section>
+
+                    <!-- Features Section - Now as unified block -->
+                    <section class="features-section">
+                        
+                        <!-- Feature 1: Dynamic Interaction -->
+                        <div class="feature-item">
+                            <img src="chat_bubble2.png" class="feature-image icon-speech">
+                            <div class="feature-text">Dynamische Interaktion & praxisnahe Grammatik</div>
+                        </div>
+
+                        <!-- Feature 2: Small Groups -->
+                        <div class="feature-item">
+                            <img src="group3.png" alt="👥" class="feature-image icon-group">			  
+                            <div class="feature-text">Kleine Gruppen für volle Aufmerksamkeit</div>
+                        </div>
+
+                        <!-- Feature 3: Supplementary Materials -->
+                        <div class="feature-item">
+                          <img src="books2.png" alt="📚" class="feature-image icon-book">
+                          <div class="feature-text">Ergänzende Materialien (Kursbuch separat)</div>
+                        </div>
+
+                        <!-- Feature 4: Individual Support -->
+                        <div class="feature-item">
+			  <img src="individual_support_t.png" alt="🎯" class="feature-image icon-person">
+                            <div class="feature-text">Individuelle Betreuung</div>
+                        </div>
+
+                        <!-- Feature 5: Room Inclusive -->
+                        <div class="feature-item">
+                          <img src="house_t.png" alt="🏢" class="feature-image icon-building">
+                            <div class="feature-text">Raum inklusive</div>
+                        </div>
+
+                        <!-- Feature 6: Lots of Fun -->
+                        <div class="feature-item">
+                          <img src="party_t.png" alt="🎉" class="feature-image icon-func">			  
+                          <div class="feature-text">Jede Menge Spaß!</div>
+                        </div>
+                    </section>
+
+                </div>
+
+            </div>
+
+            <!-- Description Section -->
+            <div class="description-section">
+                <h2 class="description-title">Individuell und flexibel</h2>
+                <p class="description-text">
+                    Die privaten Spanischkurse passen sich ganz an Ihre Bedürfnisse an. Egal auf welchem Niveau – von A1 bis C1 – Sie lernen massgeschneidert, praxisnah und effektiv, ganz nach Ihrem Tempo und Ihren Zielen. Die Kurse sind sowohl präsent vor Ort als auch online verfügbar.
+                </p>
+
+                <!-- Benefits List - Inline Style -->
+                <ul class="benefits-list">
+                    <li class="benefit-item">
+                        <span class="benefit-icon">📌</span>
+                        Individuell & persönlich
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">🎯</span>
+                        Gezielte Lernziele
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">⚡</span>
+                        Maximale Flexibilität
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">🗣️</span>
+                        Aktive Kommunikation & Praxis
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>
