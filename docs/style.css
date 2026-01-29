@@ -944,3 +944,414 @@ a:focus, button:focus {
         border: 1px solid #ccc;
     }
 }
+
+/* ============================================
+   Konversationskurse Enhanced Card Styles
+   (Imported from card_Konversationskurse.html)
+   ============================================ */
+
+
+
+        /* Main Container - Centered and Compact */
+        .konv-main-container {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        /* Border Box Container */
+        .konv-border-box {
+            background-color: #ffffff;
+            border: 2px solid #20B2AA;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative corner accent */
+        .konv-border-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #20B2AA 0%, #32CD32 50%, #FF8C00 100%);
+        }
+
+        /* Headline */
+        .konv-headline {
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: 800;
+            color: #20B2AA;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .konv-headline::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #20B2AA, #32CD32, #FF8C00);
+            border-radius: 2px;
+        }
+
+        /* Two-Column Grid Layout */
+        .konv-courses-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        /* Individual Course Card */
+        .konv-course-card {
+            background-color: #f8f8f8;
+        border: 1px solid #e0e0e0;
+	max-width: 12em;
+            border-radius: 16px;
+            /*padding: 10px;*/
+        }
+
+        /* Header Banner */
+        .konv-header-banner {
+            text-align: center;
+            margin: 0 0 8px 0;
+            padding: 0;
+            background: transparent;
+        }
+
+        /* Header Image */
+        .konv-header-image {
+            max-width: 100%;
+
+	height: 3.1em;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            /*max-width: 180px;*/
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+	.konv-header-text {
+
+	position: absolute;
+	font-family: Varela Round, sans-serif;
+	font-size: 1.7em;
+	transform: translate(-50%, -123%);
+	color: white;
+	font-weight: bold;
+	white-space: nowrap;
+	}	
+
+        /* Pricing Section */
+        .konv-pricing-section {
+            padding: 0;
+            margin-bottom: 8px;
+        }
+
+        /* Arrow-shaped Pricing Banner */
+        .konv-pricing-banner {
+            /*background-color: #FF8C00;*/
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            position: relative;
+            /*margin-bottom: 6px;*/
+/*            border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+	*/
+            line-height: 1.3;
+        }
+
+
+.konv-pricing-banner {
+	position: relative;
+	
+    display: inline-block;
+}
+
+	.konv-pricing-image {
+	max-width: 10em;
+    display: block;
+}
+
+	.konv-pricing-text {
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+	
+	font-size: 0.8em;
+	transform: translate(-49%, -70%);
+
+	color: white;
+	font-weight: bold;
+	white-space: nowrap;
+	}
+
+	
+/*
+        .konv-pricing-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #FF8C00;
+        }
+
+        .pricing-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            font-size: 0.8em;
+        }
+
+            .konv-pricing-image {
+	        max-width: 200px;
+            }		
+*/
+        /* Package Banner */
+        .konv-package-banner {
+
+            color: #ffffff;
+            text-align: center;
+            padding: 6px 8px;
+            font-size: 0.85em;
+            font-weight: bold;
+            border-radius: 5px;
+            /*margin-top: 10px;*/
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            line-height: 1.3;
+        }
+
+        .package-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            font-size: 0.9em;
+        }
+
+	.konv-package-image {
+	max-width: 172px;
+	}
+
+	.konv-package-text {
+	position: absolute;
+
+	
+	font-size: 0.78em;
+	transform: translate(-127%, -17%);
+
+	color: darkslategray;
+	font-weight: bold;
+	white-space: pre;	
+	}
+
+        /* Features Section */
+        .konv-features-section {
+            padding: 0;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        /* Feature Items - Now as a unified block */
+        .konv-feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+            padding: 6px 8px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #f0f0f0;
+            /*border-left: 2px solid #20B2AA;*/
+            font-size: 0.75em;
+            transition: background-color 0.2s ease;
+        }
+
+        .konv-feature-item:hover {
+            background-color: #f8f8f8;
+        }
+
+        /* Remove bottom border from last item */
+        .konv-feature-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Feature Icon */
+        .konv-feature-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 6px;
+            border-radius: 50%;
+            font-size: 0.9em;
+            background-color: #e8f4f8;
+        }
+
+	.konv-feature-image {
+
+	max-width: 2.5em;
+	margin-right: 1em;
+	}
+
+        .konv-feature-text {
+            flex-grow: 1;
+            color: #444;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        /* Specific Icon Colors */
+        .konv-icon-speech { color: #20B2AA; }
+        .konv-icon-group { color: #FF8C00; }
+        .konv-icon-book { color: #4169E1; }
+        .konv-icon-person { color: #32CD32; }
+        .konv-icon-building { color: #9370DB; }
+        .konv-icon-fun { color: #FF1493; }
+
+        /* Description Section */
+        .konv-description-section {
+            background-color: #f0fdf9;
+            border: 1px solid #20B2AA;
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 10px;
+        }
+
+        .konv-description-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #20B2AA;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .konv-description-text {
+            font-size: 0.85em;
+            color: #444;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        /* Benefits List - Inline Style */
+        .konv-benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .konv-benefit-item {
+            display: block;
+            margin-right: 8px;
+            margin-bottom: 4px;
+            font-size: 0.8em;
+            color: #333;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .konv-benefit-icon {
+            margin-right: 3px;
+            font-size: 1em;
+        }
+
+        /* Footer */
+        .konv-footer {
+            text-align: center;
+            padding: 8px;
+            margin-top: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .konv-footer-text {
+            color: #666;
+            font-size: 0.7em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+
+            .konv-main-container {
+                max-width: 100%;
+            }
+
+            .konv-border-box {
+                padding: 12px;
+                border-radius: 8px;
+            }
+
+            .konv-headline {
+                font-size: 1.5em;
+                margin-bottom: 12px;
+            }
+
+            .konv-courses-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .konv-header-image {
+                max-width: 200px;
+            }
+
+            .konv-pricing-banner {
+                font-size: 1em;
+                padding: 6px 10px;
+            }
+
+            .konv-pricing-image {
+	        max-width: 200px;
+            }	
+
+            .konv-package-banner {
+                font-size: 0.8em;
+            }
+
+            .konv-feature-item {
+                padding: 5px 6px;
+                font-size: 0.7em;
+            }
+
+            .konv-feature-icon {
+                width: 24px;
+                height: 24px;
+                font-size: 0.8em;
+            }
+
+            .konv-description-section {
+                padding: 10px;
+            }
+
+            .konv-description-text {
+                font-size: 0.8em;
+            }
+
+            .konv-benefit-item {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 0.85em;
+            }
+        }
+    
