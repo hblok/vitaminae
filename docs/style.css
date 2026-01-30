@@ -326,10 +326,11 @@ section::before {
 }
 
 .courses-grid {
-    display: inline-flex;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    display: inline-grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    /*grid-column: auto;*/
     gap: 48px;
-    max-width: 1140px;
+/*    max-width: 1140px;*/
     margin: 0 auto;
 }
 
@@ -798,7 +799,8 @@ section > .container {
     }
 
     .courses-grid {
-        grid-template-columns: 1fr;
+	grid-column: auto;
+        /*grid-template-columns: 1fr;*/
         gap: 32px;
     }
 
@@ -955,7 +957,10 @@ a:focus, button:focus {
         /* Main Container - Centered and Compact */
         .konv-main-container {
             width: 100%;
+
+	    /*grid-column: 1 / -1;*/
             /*max-width: 450px;*/
+	    max-width: 26em;
         }
 
         /* Border Box Container */
