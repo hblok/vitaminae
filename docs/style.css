@@ -224,7 +224,7 @@ section::before {
     left: 0;
     right: 0;
     height: 8px;
-    background: linear-gradient(to right, transparent, currentColor, transparent);
+    /*background: linear-gradient(to right, transparent, currentColor, transparent);*/
     opacity: 0.4;
 }
 
@@ -955,14 +955,14 @@ a:focus, button:focus {
         /* Main Container - Centered and Compact */
         .konv-main-container {
             width: 100%;
-            max-width: 450px;
+            /*max-width: 450px;*/
         }
 
         /* Border Box Container */
         .konv-border-box {
             background-color: #ffffff;
             border: 2px solid #20B2AA;
-            border-radius: 10px;
+            border-radius: 32px;
             padding: 15px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -1049,7 +1049,7 @@ a:focus, button:focus {
 	position: absolute;
 	font-family: Varela Round, sans-serif;
 	font-size: 1.7em;
-	transform: translate(-50%, -123%);
+	transform: translate(-50%, -116%);
 	color: white;
 	font-weight: bold;
 	white-space: nowrap;
@@ -1149,7 +1149,7 @@ a:focus, button:focus {
         }
 
 	.konv-package-image {
-	max-width: 172px;
+	max-width: 185px;
 	}
 
 	.konv-package-text {
@@ -1157,7 +1157,7 @@ a:focus, button:focus {
 
 	
 	font-size: 0.78em;
-	transform: translate(-127%, -17%);
+	transform: translate(-121%, -17%);
 
 	color: darkslategray;
 	font-weight: bold;
