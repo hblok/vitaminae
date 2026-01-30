@@ -334,158 +334,9 @@ section::before {
     margin: 0 auto;
 }
 
-.course-card {
-    background: var(--color-bg);
-    padding: 48px 40px;
-    border-radius: 32px;
-    box-shadow: 
-        8px 8px 0 rgba(21, 155, 142, 0.25),
-        16px 16px 0 rgba(216, 59, 59, 0.2);
-    transition: all 0.3s ease;
-    border: 4px solid transparent;
-    position: relative;
-    overflow: hidden;
-}
+.course-card:nth-child(2) 
 
-.course-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    opacity: 0.12;
-    transition: all 0.4s ease;
-}
-
-/* Standard Spanischkurse */
-.course-card:nth-child(1) {
-    color: var(--color-teal);
-    border-color: var(--color-teal);
-}
-
-.course-card:nth-child(1)::before {
-    color: var(--color-teal);    
-    background: var(--color-teal);
-}
-
-/* Konversationskurse */
-.course-card:nth-child(2) {
-    color: var(--color-magenta);        
-    border-color: var(--color-coral);
-}
-
-.course-card:nth-child(2)::before {
-    background: var(--color-coral);
-}
-
-/* Privatkurse */
-.course-card:nth-child(3) {
-    color: var(--color-purple);        
-    border-color: var(--color-magenta);
-}
-
-.course-card:nth-child(3)::before {
-    background: var(--color-magenta);
-}
-
-/* Reisekurse */
-.course-card:nth-child(4) {
-    color: var(--color-orange2);            
-    border-color: var(--color-orange);
-}
-
-.course-card:nth-child(4)::before {
-    background: var(--color-green);
-}
-
-/* DELE */
-.course-card:nth-child(5) {
-    color: var(--color-orange2);            
-    border-color: var(--color-orange);
-}
-
-.course-card:nth-child(5)::before {
-    background: var(--color-green);
-}
-
-/* Firmenkurse */
-.course-card:nth-child(6) {
-    color: var(--color-orange2);            
-    border-color: var(--color-orange);
-}
-
-.course-card:nth-child(6)::before {
-    background: var(--color-green);
-}
-
-
-
-.course-card:hover {
-    transform: translateY(-8px) rotate(-1deg);
-    box-shadow: 
-        12px 12px 0 rgba(21, 155, 142, 0.35),
-        24px 24px 0 rgba(216, 59, 59, 0.25);
-}
-
-.course-card:hover::before {
-    top: -20%;
-    right: -20%;
-    opacity: 0.25;
-}
-
-.course-level {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-teal-deep) 100%);
-    color: var(--color-bg);
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-size: 0.95rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    box-shadow: 0 4px 12px rgba(22, 32, 51, 0.4);
-}
-
-.course-card:nth-child(2) .course-level {
-    background: linear-gradient(135deg, var(--color-coral) 0%, var(--color-magenta) 100%);
-}
-
-.course-card:nth-child(3) .course-level {
-    background: linear-gradient(135deg, var(--color-magenta) 0%, var(--color-purple) 100%);
-}
-
-.course-description {
-    margin: 24px 0 32px;
-/*    color: var(--color-text);*/
-    font-size: 1.05rem;
-    line-height: 1.8;
-}
-
-.course-locations {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.location-tag {
-    background: linear-gradient(135deg, var(--color-teal-tint) 0%, var(--color-green-tint) 100%);
-    color: var(--color-teal-deep);
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 1rem;
-    font-weight: 700;
-    border: 2px solid var(--color-teal);
-    transition: all 0.2s ease;
-}
-
-.location-tag:hover {
-    background: var(--color-teal);
-    color: var(--color-bg);
-    transform: scale(1.05);
-}
+.course-card:nth-child(3) 
 
 /* ============================================
    Contact Section with Bold Design
@@ -701,7 +552,6 @@ section > .container {
     z-index: 1;
 }
 
-
 /* ============================================
    Teacher Photo Styling
    ============================================ */
@@ -824,13 +674,6 @@ section > .container {
             -8px -8px 0 var(--color-teal-tint);
     }
 
-    .course-card {
-        padding: 32px 24px;
-        box-shadow: 
-            4px 4px 0 rgba(21, 155, 142, 0.25),
-            8px 8px 0 rgba(216, 59, 59, 0.2);
-    }
-
     .courses-intro {
         font-size: 1.1rem;
         padding: 16px 24px;
@@ -892,13 +735,6 @@ section > .container {
         padding: 0 16px;
     }
 
-    .course-locations {
-        flex-direction: column;
-    }
-
-    .location-tag {
-        text-align: center;
-    }
 }
 
 /* ============================================
@@ -951,8 +787,6 @@ a:focus, button:focus {
    Konversationskurse Enhanced Card Styles
    (Imported from card_Konversationskurse.html)
    ============================================ */
-
-
 
         /* Main Container - Centered and Compact */
         .konv-main-container {
@@ -1082,7 +916,6 @@ a:focus, button:focus {
             line-height: 1.3;
         }
 
-
 .konv-pricing-banner {
 	position: relative;
 	
@@ -1108,7 +941,6 @@ a:focus, button:focus {
 	white-space: nowrap;
 	}
 
-	
 /*
         .konv-pricing-banner::after {
             content: '';
@@ -1160,7 +992,6 @@ a:focus, button:focus {
 	.konv-package-text {
 	position: absolute;
 
-	
 	font-size: 0.78em;
 	transform: translate(-121%, -17%);
 
