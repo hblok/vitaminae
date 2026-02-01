@@ -326,12 +326,11 @@ Courses Grid with Vibrant Cards
 }
 
 .courses-grid {
-    display: inline-grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    /*grid-column: auto;*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26em, 1fr));
     gap: 48px;
-    /*    max-width: 1140px;*/
     margin: 0 auto;
+    justify-content: center;
 }
 
 .course-card:nth-child(2)
