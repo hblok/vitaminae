@@ -1,6 +1,6 @@
 /* ============================================
-   CSS Variables - Darker Otomi Color Palette
-   ============================================ */
+CSS Variables - Darker Otomi Color Palette
+============================================ */
 :root {
     /* Primary Colors - Darker & Richer Tones */
     --color-teal: #159B8E;
@@ -15,18 +15,18 @@
     --color-yellow: #D69D00;
     --color-yellow-accent: #E69A0F;
     --color-navy: #162033;
-    
+
     /* Secondary Colors - Darker */
     --color-orange: #D66315;
     --color-orange2: #C75203;
     --color-purple: #663399;
-    
+
     /* Neutrals */
     --color-text: #2A3240;
     --color-bg: #FFFFFF;
     --color-bg-warm: #F5F5F2;
     --color-bg-teal: #F0F8F7;
-    
+
     /* Darker Tints for sections */
     --color-teal-tint: #D9F0ED;
     --color-coral-tint: #F7DCDC;
@@ -36,8 +36,8 @@
 }
 
 /* ============================================
-   Global Reset & Base Styles
-   ============================================ */
+Global Reset & Base Styles
+============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -54,14 +54,14 @@ body {
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* ============================================
-   Typography
-   ============================================ */
+Typography
+============================================ */
 h1, h2 {
     font-family: 'Fraunces', serif;
     color: var(--color-navy);
@@ -97,7 +97,7 @@ h2::after {
 h3 {
     font-size: 1.75rem;
     margin-bottom: 1rem;
-/*    color: var(--color-teal);*/
+    /*    color: var(--color-teal);*/
     font-weight: 700;
 }
 
@@ -106,7 +106,7 @@ p {
 }
 
 strong {
-/*    color: var(--color-navy);*/
+    /*    color: var(--color-navy);*/
     font-weight: 700;
 }
 
@@ -122,8 +122,8 @@ a:hover {
 }
 
 /* ============================================
-   Container
-   ============================================ */
+Container
+============================================ */
 .container {
     max-width: 1140px;
     margin: 0 auto;
@@ -131,8 +131,8 @@ a:hover {
 }
 
 /* ============================================
-   Header with Image
-   ============================================ */
+Header with Image
+============================================ */
 .header-image-container {
     width: 100%;
     background-color: var(--color-bg);
@@ -150,17 +150,17 @@ a:hover {
 }
 
 /* ============================================
-   Decorative Border Elements
-   ============================================ */
+Decorative Border Elements
+============================================ */
 .otomi-border {
     height: 16px;
-    background: linear-gradient(to right, 
-        var(--color-teal) 0%, 
-        var(--color-coral) 20%, 
-        var(--color-yellow) 40%, 
-        var(--color-magenta) 60%, 
-        var(--color-green) 80%, 
-        var(--color-purple) 100%);
+    background: linear-gradient(to right,
+    var(--color-teal) 0%,
+    var(--color-coral) 20%,
+    var(--color-yellow) 40%,
+    var(--color-magenta) 60%,
+    var(--color-green) 80%,
+    var(--color-purple) 100%);
 }
 
 .dot-pattern {
@@ -210,8 +210,8 @@ a:hover {
 .bg-orange { background-color: var(--color-orange); }
 
 /* ============================================
-   Section Styling with Organic Borders
-   ============================================ */
+Section Styling with Organic Borders
+============================================ */
 section {
     padding: 96px 32px;
     position: relative;
@@ -248,8 +248,8 @@ section::before {
 }
 
 /* ============================================
-   Content Boxes with Organic Styling
-   ============================================ */
+Content Boxes with Organic Styling
+============================================ */
 .content-box {
     max-width: 900px;
     margin: 0 auto;
@@ -267,17 +267,17 @@ section::before {
 }
 
 /* ============================================
-   Teacher Section with Enhanced Design
-   ============================================ */
+Teacher Section with Enhanced Design
+============================================ */
 .teacher-intro {
     background: var(--color-bg);
     padding: 48px;
     border-radius: 24px;
     border-left: 8px solid var(--color-coral);
     border-right: 8px solid var(--color-teal);
-    box-shadow: 
-        12px 12px 0 var(--color-yellow-tint),
-        -12px -12px 0 var(--color-teal-tint);
+    box-shadow:
+    12px 12px 0 var(--color-yellow-tint),
+    -12px -12px 0 var(--color-teal-tint);
     position: relative;
     margin-top: 32px;
 }
@@ -307,8 +307,8 @@ section::before {
 }
 
 /* ============================================
-   Courses Grid with Vibrant Cards
-   ============================================ */
+Courses Grid with Vibrant Cards
+============================================ */
 .courses-intro {
     text-align: center;
     margin-bottom: 64px;
@@ -327,20 +327,20 @@ section::before {
 
 .courses-grid {
     display: inline-grid;
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     /*grid-column: auto;*/
     gap: 48px;
-/*    max-width: 1140px;*/
+    /*    max-width: 1140px;*/
     margin: 0 auto;
 }
 
-.course-card:nth-child(2) 
+.course-card:nth-child(2)
 
-.course-card:nth-child(3) 
+.course-card:nth-child(3)
 
 /* ============================================
-   Contact Section with Bold Design
-   ============================================ */
+Contact Section with Bold Design
+============================================ */
 .contact-content {
     max-width: 700px;
     margin: 0 auto;
@@ -353,9 +353,9 @@ section::before {
     border-radius: 32px;
     margin-top: 48px;
     border: 6px solid var(--color-magenta);
-    box-shadow: 
-        0 0 0 12px var(--color-magenta-tint),
-        0 8px 32px rgba(179, 31, 95, 0.25);
+    box-shadow:
+    0 0 0 12px var(--color-magenta-tint),
+    0 8px 32px rgba(179, 31, 95, 0.25);
     position: relative;
 }
 
@@ -446,8 +446,8 @@ section::before {
 }
 
 /* ============================================
-   Footer with Vibrant Design
-   ============================================ */
+Footer with Vibrant Design
+============================================ */
 footer {
     background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-teal-deep) 100%);
     color: var(--color-bg);
@@ -464,12 +464,12 @@ footer::before {
     left: 0;
     right: 0;
     height: 8px;
-    background: linear-gradient(to right, 
-        var(--color-teal), 
-        var(--color-coral), 
-        var(--color-yellow), 
-        var(--color-magenta), 
-        var(--color-green));
+    background: linear-gradient(to right,
+    var(--color-teal),
+    var(--color-coral),
+    var(--color-yellow),
+    var(--color-magenta),
+    var(--color-green));
 }
 
 footer p {
@@ -503,8 +503,8 @@ footer p {
 }
 
 /* ============================================
-   Floating Shapes Background
-   ============================================ */
+Floating Shapes Background
+============================================ */
 .floating-shapes {
     position: absolute;
     top: 0;
@@ -553,8 +553,8 @@ section > .container {
 }
 
 /* ============================================
-   Teacher Photo Styling
-   ============================================ */
+Teacher Photo Styling
+============================================ */
 .teacher-content-wrapper {
     display: flex;
     flex-direction: row;
@@ -578,26 +578,26 @@ section > .container {
 }
 
 /* ============================================
-   Testimonial Boxes Styling
-   ============================================ */
+Testimonial Boxes Styling
+============================================ */
 .testimonial-box {
     background: var(--color-bg);
     padding: 40px;
     border-radius: 24px;
     margin-bottom: 32px;
     border-left: 6px solid var(--color-magenta);
-    box-shadow: 
-        6px 6px 0 rgba(179, 31, 95, 0.15),
-        12px 12px 0 rgba(21, 155, 142, 0.1);
+    box-shadow:
+    6px 6px 0 rgba(179, 31, 95, 0.15),
+    12px 12px 0 rgba(21, 155, 142, 0.1);
     position: relative;
     transition: all 0.3s ease;
 }
 
 .testimonial-box:hover {
     transform: translateY(-4px);
-    box-shadow: 
-        8px 8px 0 rgba(179, 31, 95, 0.2),
-        16px 16px 0 rgba(21, 155, 142, 0.15);
+    box-shadow:
+    8px 8px 0 rgba(179, 31, 95, 0.2),
+    16px 16px 0 rgba(21, 155, 142, 0.15);
 }
 
 .testimonial-box::before {
@@ -628,8 +628,8 @@ section > .container {
 }
 
 /* ============================================
-   Responsive Design
-   ============================================ */
+Responsive Design
+============================================ */
 
 @media (max-width: 768px) {
     h1 {
@@ -649,7 +649,7 @@ section > .container {
     }
 
     .courses-grid {
-	grid-column: auto;
+        grid-column: auto;
         /*grid-template-columns: 1fr;*/
         gap: 32px;
     }
@@ -669,9 +669,9 @@ section > .container {
 
     .teacher-intro {
         padding: 32px 24px;
-        box-shadow: 
-            8px 8px 0 var(--color-yellow-tint),
-            -8px -8px 0 var(--color-teal-tint);
+        box-shadow:
+        8px 8px 0 var(--color-yellow-tint),
+        -8px -8px 0 var(--color-teal-tint);
     }
 
     .courses-intro {
@@ -738,8 +738,8 @@ section > .container {
 }
 
 /* ============================================
-   Accessibility
-   ============================================ */
+Accessibility
+============================================ */
 a:focus, button:focus {
     outline: 3px solid var(--color-coral);
     outline-offset: 4px;
@@ -756,8 +756,8 @@ a:focus, button:focus {
 }
 
 /* ============================================
-   Print Styles
-   ============================================ */
+Print Styles
+============================================ */
 @media print {
     .floating-shapes,
     .decorative-shape,
@@ -784,410 +784,410 @@ a:focus, button:focus {
 }
 
 /* ============================================
-   Konversationskurse Enhanced Card Styles
-   (Imported from card_Konversationskurse.html)
-   ============================================ */
+Konversationskurse Enhanced Card Styles
+(Imported from card_Konversationskurse.html)
+============================================ */
 
-        /* Main Container - Centered and Compact */
-        .konv-main-container {
-            width: 100%;
+/* Main Container - Centered and Compact */
+.konv-main-container {
+    width: 100%;
 
-	    /*grid-column: 1 / -1;*/
-            /*max-width: 450px;*/
-	    max-width: 26em;
-        }
+    /*grid-column: 1 / -1;*/
+    /*max-width: 450px;*/
+    max-width: 26em;
+}
 
-        /* Border Box Container */
-        .konv-border-box {
-            background-color: #ffffff;
-            border: 2px solid #20B2AA;
-            border-radius: 32px;
-            padding: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
+/* Border Box Container */
+.konv-border-box {
+    background-color: #ffffff;
+    border: 2px solid #20B2AA;
+    border-radius: 32px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
 
-        /* Decorative corner accent */
-        .konv-border-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #20B2AA 0%, #32CD32 50%, #FF8C00 100%);
-        }
+/* Decorative corner accent */
+.konv-border-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #20B2AA 0%, #32CD32 50%, #FF8C00 100%);
+}
 
-        /* Headline */
-        .konv-headline {
-            text-align: center;
-            font-size: 1.8em;
-            font-weight: 800;
-            color: #20B2AA;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            padding-bottom: 10px;
-            line-height: 1.2;
-        }
+/* Headline */
+.konv-headline {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 800;
+    color: #20B2AA;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+    line-height: 1.2;
+}
 
-        .konv-headline::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, #20B2AA, #32CD32, #FF8C00);
-            border-radius: 2px;
-        }
+.konv-headline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #20B2AA, #32CD32, #FF8C00);
+    border-radius: 2px;
+}
 
-        /* Two-Column Grid Layout */
-        .konv-courses-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            align-items: start;
-            margin-bottom: 15px;
-        }
+/* Two-Column Grid Layout */
+.konv-courses-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: start;
+    margin-bottom: 15px;
+}
 
-        /* Individual Course Card */
-        .konv-course-card {
-            background-color: #f8f8f8;
-        border: 1px solid #e0e0e0;
-	max-width: 12em;
-            border-radius: 16px;
-            /*padding: 10px;*/
-        }
+/* Individual Course Card */
+.konv-course-card {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    max-width: 12em;
+    border-radius: 16px;
+    /*padding: 10px;*/
+}
 
-        /* Header Banner */
-        .konv-header-banner {
-            text-align: center;
-            margin: 0 0 8px 0;
-            padding: 0;
-            background: transparent;
-        }
+/* Header Banner */
+.konv-header-banner {
+    text-align: center;
+    margin: 0 0 8px 0;
+    padding: 0;
+    background: transparent;
+}
 
-        /* Header Image */
-        .konv-header-image {
-            max-width: 100%;
+/* Header Image */
+.konv-header-image {
+    max-width: 100%;
 
-	height: 3.1em;
-            display: block;
-            margin: 0 auto;
-            width: 100%;
-            /*max-width: 180px;*/
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-        }
+    height: 3.1em;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    /*max-width: 180px;*/
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
 
-	.konv-header-text {
+.konv-header-text {
 
-	position: absolute;
-	font-family: Varela Round, sans-serif;
-	font-size: 1.7em;
-	transform: translate(-50%, -116%);
-	color: white;
-	font-weight: bold;
-	white-space: nowrap;
-	}	
+    position: absolute;
+    font-family: Varela Round, sans-serif;
+    font-size: 1.7em;
+    transform: translate(-50%, -116%);
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+}
 
-        /* Pricing Section */
-        .konv-pricing-section {
-            padding: 0;
-            margin-bottom: 8px;
-        }
+/* Pricing Section */
+.konv-pricing-section {
+    padding: 0;
+    margin-bottom: 8px;
+}
 
-        /* Arrow-shaped Pricing Banner */
-        .konv-pricing-banner {
-            /*background-color: #FF8C00;*/
-            color: #ffffff;
-            text-align: center;
-            padding: 8px 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            position: relative;
-            /*margin-bottom: 6px;*/
-/*            border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-	*/
-            line-height: 1.3;
-        }
+/* Arrow-shaped Pricing Banner */
+.konv-pricing-banner {
+    /*background-color: #FF8C00;*/
+    color: #ffffff;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    position: relative;
+    /*margin-bottom: 6px;*/
+    /*            border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    */
+    line-height: 1.3;
+}
 
 .konv-pricing-banner {
-	position: relative;
-	
+    position: relative;
+
     display: inline-block;
 }
 
-	.konv-pricing-image {
-	max-width: 10em;
+.konv-pricing-image {
+    max-width: 10em;
     display: block;
 }
 
-	.konv-pricing-text {
-	position: absolute;
+.konv-pricing-text {
+    position: absolute;
 
-	top: 50%;
-	left: 50%;
-	
-	font-size: 0.8em;
-	transform: translate(-49%, -70%);
+    top: 50%;
+    left: 50%;
 
-	color: white;
-	font-weight: bold;
-	white-space: nowrap;
-	}
+    font-size: 0.8em;
+    transform: translate(-49%, -70%);
+
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+}
 
 /*
-        .konv-pricing-banner::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-top: 6px solid #FF8C00;
-        }
+.konv-pricing-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #FF8C00;
+}
 
-        .pricing-icon {
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 5px;
-            font-size: 0.8em;
-        }
+.pricing-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    font-size: 0.8em;
+}
 
-            .konv-pricing-image {
-	        max-width: 200px;
-            }		
+.konv-pricing-image {
+    max-width: 200px;
+}
 */
-        /* Package Banner */
-        .konv-package-banner {
+/* Package Banner */
+.konv-package-banner {
 
-            color: #ffffff;
-            text-align: center;
-            padding: 6px 8px;
-            font-size: 0.85em;
-            font-weight: bold;
-            border-radius: 5px;
-            /*margin-top: 10px;*/
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-            line-height: 1.3;
-        }
+    color: #ffffff;
+    text-align: center;
+    padding: 6px 8px;
+    font-size: 0.85em;
+    font-weight: bold;
+    border-radius: 5px;
+    /*margin-top: 10px;*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    line-height: 1.3;
+}
 
-        .package-icon {
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 5px;
-            font-size: 0.9em;
-        }
+.package-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    font-size: 0.9em;
+}
 
-	.konv-package-image {
-	max-width: 185px;
-	}
+.konv-package-image {
+    max-width: 185px;
+}
 
-	.konv-package-text {
-	position: absolute;
+.konv-package-text {
+    position: absolute;
 
-	font-size: 0.78em;
-	transform: translate(-121%, -17%);
+    font-size: 0.78em;
+    transform: translate(-121%, -17%);
 
-	color: darkslategray;
-	font-weight: bold;
-	white-space: pre;	
-	}
+    color: darkslategray;
+    font-weight: bold;
+    white-space: pre;
+}
 
-        /* Features Section */
-        .konv-features-section {
-            padding: 0;
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
-        }
+/* Features Section */
+.konv-features-section {
+    padding: 0;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
 
-        /* Feature Items - Now as a unified block */
-        .konv-feature-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0;
-            padding: 6px 8px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #f0f0f0;
-            /*border-left: 2px solid #20B2AA;*/
-            font-size: 0.75em;
-            transition: background-color 0.2s ease;
-        }
+/* Feature Items - Now as a unified block */
+.konv-feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 6px 8px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    /*border-left: 2px solid #20B2AA;*/
+    font-size: 0.75em;
+    transition: background-color 0.2s ease;
+}
 
-        .konv-feature-item:hover {
-            background-color: #f8f8f8;
-        }
+.konv-feature-item:hover {
+    background-color: #f8f8f8;
+}
 
-        /* Remove bottom border from last item */
-        .konv-feature-item:last-child {
-            border-bottom: none;
-        }
+/* Remove bottom border from last item */
+.konv-feature-item:last-child {
+    border-bottom: none;
+}
 
-        /* Feature Icon */
-        .konv-feature-icon {
-            flex-shrink: 0;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 6px;
-            border-radius: 50%;
-            font-size: 0.9em;
-            background-color: #e8f4f8;
-        }
+/* Feature Icon */
+.konv-feature-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+    border-radius: 50%;
+    font-size: 0.9em;
+    background-color: #e8f4f8;
+}
 
-	.konv-feature-image {
+.konv-feature-image {
 
-	max-width: 2.5em;
-	margin-right: 1em;
-	}
+    max-width: 2.5em;
+    margin-right: 1em;
+}
 
-        .konv-feature-text {
-            flex-grow: 1;
-            color: #444;
-            font-weight: 500;
-            line-height: 1.2;
-        }
+.konv-feature-text {
+    flex-grow: 1;
+    color: #444;
+    font-weight: 500;
+    line-height: 1.2;
+}
 
-        /* Specific Icon Colors */
-        .konv-icon-speech { color: #20B2AA; }
-        .konv-icon-group { color: #FF8C00; }
-        .konv-icon-book { color: #4169E1; }
-        .konv-icon-person { color: #32CD32; }
-        .konv-icon-building { color: #9370DB; }
-        .konv-icon-fun { color: #FF1493; }
+/* Specific Icon Colors */
+.konv-icon-speech { color: #20B2AA; }
+.konv-icon-group { color: #FF8C00; }
+.konv-icon-book { color: #4169E1; }
+.konv-icon-person { color: #32CD32; }
+.konv-icon-building { color: #9370DB; }
+.konv-icon-fun { color: #FF1493; }
 
-        /* Description Section */
-        .konv-description-section {
-            background-color: #f0fdf9;
-            border: 1px solid #20B2AA;
-            border-radius: 6px;
-            padding: 12px;
-            margin-top: 10px;
-        }
+/* Description Section */
+.konv-description-section {
+    background-color: #f0fdf9;
+    border: 1px solid #20B2AA;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 10px;
+}
 
-        .konv-description-title {
-            font-size: 1em;
-            font-weight: bold;
-            color: #20B2AA;
-            margin-bottom: 8px;
-            text-align: center;
-        }
+.konv-description-title {
+    font-size: 1em;
+    font-weight: bold;
+    color: #20B2AA;
+    margin-bottom: 8px;
+    text-align: center;
+}
 
-        .konv-description-text {
-            font-size: 0.85em;
-            color: #444;
-            line-height: 1.4;
-            margin-bottom: 10px;
-            text-align: justify;
-        }
+.konv-description-text {
+    font-size: 0.85em;
+    color: #444;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    text-align: justify;
+}
 
-        /* Benefits List - Inline Style */
-        .konv-benefits-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+/* Benefits List - Inline Style */
+.konv-benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-        .konv-benefit-item {
-            display: block;
-            margin-right: 8px;
-            margin-bottom: 4px;
-            font-size: 0.8em;
-            color: #333;
-            font-weight: 500;
-            line-height: 1.4;
-        }
+.konv-benefit-item {
+    display: block;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    font-size: 0.8em;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.4;
+}
 
-        .konv-benefit-icon {
-            margin-right: 3px;
-            font-size: 1em;
-        }
+.konv-benefit-icon {
+    margin-right: 3px;
+    font-size: 1em;
+}
 
-        /* Footer */
-        .konv-footer {
-            text-align: center;
-            padding: 8px;
-            margin-top: 12px;
-            border-top: 1px solid #e0e0e0;
-        }
+/* Footer */
+.konv-footer {
+    text-align: center;
+    padding: 8px;
+    margin-top: 12px;
+    border-top: 1px solid #e0e0e0;
+}
 
-        .konv-footer-text {
-            color: #666;
-            font-size: 0.7em;
-        }
+.konv-footer-text {
+    color: #666;
+    font-size: 0.7em;
+}
 
-        /* Responsive Design */
-        @media (max-width: 500px) {
+/* Responsive Design */
+@media (max-width: 500px) {
 
-            .konv-main-container {
-                max-width: 100%;
-            }
+    .konv-main-container {
+        max-width: 100%;
+    }
 
-            .konv-border-box {
-                padding: 12px;
-                border-radius: 8px;
-            }
+    .konv-border-box {
+        padding: 12px;
+        border-radius: 8px;
+    }
 
-            .konv-headline {
-                font-size: 1.5em;
-                margin-bottom: 12px;
-            }
+    .konv-headline {
+        font-size: 1.5em;
+        margin-bottom: 12px;
+    }
 
-            .konv-courses-grid {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
+    .konv-courses-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
 
-            .konv-header-image {
-                max-width: 200px;
-            }
+    .konv-header-image {
+        max-width: 200px;
+    }
 
-            .konv-pricing-banner {
-                font-size: 1em;
-                padding: 6px 10px;
-            }
+    .konv-pricing-banner {
+        font-size: 1em;
+        padding: 6px 10px;
+    }
 
-            .konv-pricing-image {
-	        max-width: 200px;
-            }	
+    .konv-pricing-image {
+        max-width: 200px;
+    }
 
-            .konv-package-banner {
-                font-size: 0.8em;
-            }
+    .konv-package-banner {
+        font-size: 0.8em;
+    }
 
-            .konv-feature-item {
-                padding: 5px 6px;
-                font-size: 0.7em;
-            }
+    .konv-feature-item {
+        padding: 5px 6px;
+        font-size: 0.7em;
+    }
 
-            .konv-feature-icon {
-                width: 24px;
-                height: 24px;
-                font-size: 0.8em;
-            }
+    .konv-feature-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 0.8em;
+    }
 
-            .konv-description-section {
-                padding: 10px;
-            }
+    .konv-description-section {
+        padding: 10px;
+    }
 
-            .konv-description-text {
-                font-size: 0.8em;
-            }
+    .konv-description-text {
+        font-size: 0.8em;
+    }
 
-            .konv-benefit-item {
-                display: block;
-                margin-bottom: 5px;
-                font-size: 0.85em;
-            }
-        }
-    
+    .konv-benefit-item {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.85em;
+    }
+}
+
