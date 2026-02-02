@@ -310,11 +310,11 @@ Teacher Section with Enhanced Design
 Courses Grid with Vibrant Cards
 ============================================ */
 .courses-intro {
-    text-align: center;
+    text-align: left;
     margin-bottom: 64px;
-    font-size: 1.4rem;
+    /*font-size: 1.4rem;*/
     color: var(--color-navy);
-    font-weight: 700;
+/*    font-weight: 700;*/
     background: var(--color-bg);
     padding: 24px 32px;
     border-radius: 50px;
@@ -323,6 +323,11 @@ Courses Grid with Vibrant Cards
     transform: translateX(-50%);
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     border: 3px solid var(--color-yellow);
+}
+
+.courses-intro-levels {
+    font-weight: bold;
+    margin-bottom: 1.5rem;
 }
 
 .courses-grid {
