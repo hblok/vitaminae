@@ -1,5 +1,11 @@
+Use MCP GitHub Server to clone the repository /hblok/vitaminae/ on branch main.
+Add and push changes in a commit to a new branch.
+
+---
+
 Use MCP GitHub Server to clone the repository /hblok/vitaminae/ on branch draft1.
 Add and push this file in a commit to the same "draft1" branch.
+
 
 ---
 
