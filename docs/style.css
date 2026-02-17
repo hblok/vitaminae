@@ -1014,6 +1014,12 @@ Responsive Design
         padding: 16px 24px;
     }
 
+    .main-container {
+	width: 100%;
+	grid-column: 1 / -1;
+	max-width: 450px;
+    }    
+
     .content-box p:first-of-type::first-letter {
         font-size: 3rem;
     }
@@ -1136,9 +1142,6 @@ Konversationskurse Enhanced Card Styles
 /* Main Container - Centered and Compact */
 .main-container {
     width: 100%;
-
-    /*grid-column: 1 / -1;*/
-    /*max-width: 450px;*/
     max-width: 26em;
 }
 
@@ -1475,7 +1478,9 @@ Konversationskurse Enhanced Card Styles
 @media (max-width: 500px) {
 
     .main-container {
-        max-width: 100%;
+	width: 100%;
+	grid-column: 1 / -1;
+	max-width: 450px;
     }
 
     .border-box {
