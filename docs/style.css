@@ -149,6 +149,13 @@ Header with Image
     margin: 0 auto;
 }
 
+.banner-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;    
+}
+
 /* ============================================
 Decorative Border Elements
 ============================================ */
@@ -1211,8 +1218,7 @@ Konversationskurse Enhanced Card Styles
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
-.konv-header-text {
-
+.course-minutes {
     position: absolute;
     font-family: Varela Round, sans-serif;
     font-size: 1.7em;
@@ -1246,7 +1252,6 @@ Konversationskurse Enhanced Card Styles
 
 .konv-pricing-banner {
     position: relative;
-
     display: inline-block;
 }
 
@@ -1294,7 +1299,7 @@ Konversationskurse Enhanced Card Styles
     max-width: 185px;
 }
 
-.konv-package-text {
+.package-price-text {
     position: absolute;
 
     font-size: 0.78em;
@@ -1455,7 +1460,7 @@ Konversationskurse Enhanced Card Styles
     }
 
     .konv-header-image {
-        max-width: 200px;
+	max-width: 9em;
     }
 
     .konv-pricing-banner {
@@ -1463,6 +1468,16 @@ Konversationskurse Enhanced Card Styles
         padding: 6px 10px;
     }
 
+    .course-minutes {
+	position: absolute;
+	font-family: Varela Round, sans-serif;
+	font-size: 1.7em;
+	transform: translate(-50%, -116%);
+	color: white;
+	font-weight: bold;
+	white-space: nowrap;
+    }
+    
     .konv-pricing-image {
         max-width: 200px;
     }
@@ -1472,10 +1487,11 @@ Konversationskurse Enhanced Card Styles
     }
 
     /* Adjust text positioning for mobile */
-    .konv-package-text {
-        transform: translate(-115%, -15%);
-        font-size: 0.7em;
+    .package-price-text {
+        transform: translate(-100%, -25%);
+        font-size: 0.9em;
     }
+ 
 
     .konv-feature-item {
         padding: 5px 6px;
