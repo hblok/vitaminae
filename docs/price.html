@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprachkurs Angebot</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Banner */
+        .header-banner {
+            background: linear-gradient(180deg, #1a9d96 0%, #2bc9c0 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 40px;
+            font-size: 2.8em;
+            font-weight: 800;
+            letter-spacing: 1px;
+            border-radius: 15px 15px 0 0;
+            margin: 30px 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            overflow: hidden;
+            /* Create curved bottom edge using clip-path */
+            clip-path: polygon(
+                0% 0%, 
+                100% 0%, 
+                100% calc(100% - 20px), 
+                95% 100%, 
+                5% 100%, 
+                0% calc(100% - 20px)
+            );
+            padding-bottom: 45px; /* Extra padding for the curve */
+        }
+
+        /* Add subtle shine effect to banner */
+        .header-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            pointer-events: none;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Arrow-shaped Pricing Banner */
+        .pricing-banner {
+            background-color: #FF8C00;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 40px;
+            font-size: 1.8em;
+            font-weight: bold;
+            position: relative;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #FF8C00;
+        }
+
+        .pricing-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+
+        /* Package Banner */
+        .package-banner {
+            background-color: #32CD32;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .package-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        /* Dotted Separator */
+        .separator {
+            border-top: 3px dotted #ccc;
+            margin: 30px 20px;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 0 20px;
+        }
+
+        .features-title {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        /* Feature Items */
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #20B2AA;
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            background-color: #e8f4f8;
+        }
+
+        .feature-text {
+            flex-grow: 1;
+            font-size: 1.1em;
+            color: #444;
+            font-weight: 500;
+        }
+
+        /* Specific Icon Colors */
+        .icon-speech { color: #20B2AA; }
+        .icon-group { color: #FF8C00; }
+        .icon-book { color: #4169E1; }
+        .icon-person { color: #32CD32; }
+        .icon-building { color: #9370DB; }
+        .icon-fun { color: #FF1493; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #f5f5f5;
+            margin-top: 30px;
+        }
+
+        .footer-text {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-banner {
+                font-size: 2.2em;
+                padding: 20px 30px;
+                padding-bottom: 40px;
+                border-radius: 12px 12px 0 0;
+                margin: 25px 15px;
+                clip-path: polygon(
+                    0% 0%, 
+                    100% 0%, 
+                    100% calc(100% - 15px), 
+                    92% 100%, 
+                    8% 100%, 
+                    0% calc(100% - 15px)
+                );
+            }
+
+            .pricing-banner {
+                font-size: 1.4em;
+                padding: 20px 30px;
+            }
+
+            .package-banner {
+                font-size: 1em;
+            }
+
+            .feature-item {
+                padding: 12px;
+            }
+
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3em;
+            }
+
+            .feature-text {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-banner {
+                font-size: 1.8em;
+                padding: 15px 20px;
+                padding-bottom: 35px;
+                border-radius: 10px 10px 0 0;
+                margin: 20px 10px;
+                clip-path: polygon(
+                    0% 0%, 
+                    100% 0%, 
+                    100% calc(100% - 12px), 
+                    90% 100%, 
+                    10% 100%, 
+                    0% calc(100% - 12px)
+                );
+            }
+
+            .pricing-banner {
+                font-size: 1.2em;
+                padding: 15px 20px;
+            }
+
+            .feature-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .feature-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Header Section -->
+        <header class="header-banner">
+            60 Minuten
+        </header>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <!-- Hourly Pricing Banner -->
+            <div class="pricing-banner">
+                <span class="pricing-icon">🏷️</span>
+                54 CHF pro Stunde
+            </div>
+
+            <!-- Package Pricing Banner -->
+            <div class="package-banner">
+                <span class="package-icon">🐷💰</span>
+                10er-Paket: 510 CHF (Spare 30 CHF)
+            </div>
+        </section>
+
+        <!-- Dotted Separator -->
+        <div class="separator"></div>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 class="features-title">Vorteile & Leistungen</h2>
+            
+            <!-- Feature 1: Dynamic Interaction -->
+            <div class="feature-item">
+                <div class="feature-icon icon-speech">💬</div>
+                <div class="feature-text">Dynamische Interaktion & praxisnahe Grammatik</div>
+            </div>
+
+            <!-- Feature 2: Small Groups -->
+            <div class="feature-item">
+                <div class="feature-icon icon-group">👥</div>
+                <div class="feature-text">Kleine Gruppen für volle Aufmerksamkeit</div>
+            </div>
+
+            <!-- Feature 3: Supplementary Materials -->
+            <div class="feature-item">
+                <div class="feature-icon icon-book">📚</div>
+                <div class="feature-text">Ergänzende Materialien (Kursbuch separat)</div>
+            </div>
+
+            <!-- Feature 4: Individual Support -->
+            <div class="feature-item">
+                <div class="feature-icon icon-person">🎯</div>
+                <div class="feature-text">Individuelle Betreuung</div>
+            </div>
+
+            <!-- Feature 5: Room Inclusive -->
+            <div class="feature-item">
+                <div class="feature-icon icon-building">🏢</div>
+                <div class="feature-text">Raum inklusive</div>
+            </div>
+
+            <!-- Feature 6: Lots of Fun -->
+            <div class="feature-item">
+                <div class="feature-icon icon-fun">🎉</div>
+                <div class="feature-text">Jede Menge Spaß!</div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">© 2024 Sprachkurs Angebot</p>
+        </footer>
+
+    </div>
+</body>
+</html>

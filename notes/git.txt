@@ -1,0 +1,9 @@
+Use MCP GitHub Server to clone the repository /hblok/vitaminae/ on branch draft1.
+Add and push this file in a commit to the same "draft1" branch.
+
+---
+
+OLD:
+
+- Clone command: `gh repo clone hblok/vitaminae`
+- For pushing changes, use: `git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/hblok/vitaminae.git`
