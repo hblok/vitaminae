@@ -1282,6 +1282,7 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Package Banner */
+/*
 .package-banner {
 
     color: #ffffff;
@@ -1290,22 +1291,17 @@ Konversationskurse Enhanced Card Styles
     font-size: 0.85em;
     font-weight: bold;
     border-radius: 5px;
-    /*margin-top: 10px;*/
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     line-height: 1.3;
 }
-
-.package-icon {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 5px;
-    font-size: 0.9em;
-}
-
+*/
+ 
+/*
 .package-image {
     max-width: 185px;
 }
-
+*/
+/*
 .package-price-text {
     position: absolute;
 
@@ -1316,6 +1312,38 @@ Konversationskurse Enhanced Card Styles
     font-weight: bold;
     white-space: pre;
 }
+*/
+
+.package-banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*width: 185px;*/
+    height: 4em;
+    background-image: url('price_group_t.png');
+    /*background-size: cover;*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 10px auto;
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);*/
+}
+
+.package-price-text {
+    font-size: 0.78em;
+    color: darkslategray;
+    font-weight: bold;
+    /*white-space: pre-line;*/
+    line-height: 1.3;
+    text-align: center;
+    padding: 10px;
+
+    margin-left: -2em;
+    margin-top: -0.4em;
+    /* Center using flexbox, no absolute positioning needed */
+}
+
 
 /* Features Section */
 .features-section {
@@ -1496,10 +1524,12 @@ Konversationskurse Enhanced Card Styles
     }
 
     /* Adjust text positioning for mobile */
+    /*
     .package-price-text {
         transform: translate(-100%, -25%);
         font-size: 0.9em;
     }
+*/
  
 
     .feature-item {
