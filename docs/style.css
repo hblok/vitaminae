@@ -1212,15 +1212,32 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Header Banner */
-.header-banner {
-    text-align: center;
-    margin: 0 0 8px 0;
-    padding: 0;
-    background: transparent;
+.minutes-banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4em;
+    /*background-size: cover;*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*margin: 10px auto;*/
+    
+    /*margin: 0 0 8px 0;*/
+    /*padding: 0;*/
+}
+
+.minutes-60 {
+    background-image: url('blue_min_t.png');
+}
+
+.minutes-90 {
+    background-image: url('red_min_t.png');    
 }
 
 /* Header Image */
-.header-image {
+.minutes-image {
     max-width: 100%;
 
     height: 3.1em;
@@ -1232,13 +1249,18 @@ Konversationskurse Enhanced Card Styles
 }
 
 .course-minutes {
-    position: absolute;
+
     font-family: Varela Round, sans-serif;
     font-size: 1.7em;
-    transform: translate(-50%, -116%);
     color: white;
     font-weight: bold;
     white-space: nowrap;
+
+    text-align: center;
+    /*padding: 10px;*/
+
+    margin-left: 0em;
+    margin-top: -0.4em;
 }
 
 /* Pricing Section */
@@ -1265,7 +1287,17 @@ Konversationskurse Enhanced Card Styles
 
 .pricing-banner {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 4em;
+    background-image: url('arrow_orange2.png');
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 10px auto;
 }
 
 .pricing-image {
@@ -1274,48 +1306,19 @@ Konversationskurse Enhanced Card Styles
 }
 
 .pricing-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     font-size: 0.8em;
-    transform: translate(-49%, -70%);
+    text-align: center;
+    padding: 10px;
+
+    margin-left: 0em;
+    margin-top: -0.4em;
+	
     color: white;
     font-weight: bold;
     white-space: nowrap;
 }
 
 /* Package Banner */
-/*
-.package-banner {
-
-    color: #ffffff;
-    text-align: center;
-    padding: 6px 8px;
-    font-size: 0.85em;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    line-height: 1.3;
-}
-*/
- 
-/*
-.package-image {
-    max-width: 185px;
-}
-*/
-/*
-.package-price-text {
-    position: absolute;
-
-    font-size: 0.78em;
-    transform: translate(-121%, -17%);
-
-    color: darkslategray;
-    font-weight: bold;
-    white-space: pre;
-}
-*/
 
 .package-banner {
     position: relative;
@@ -1499,7 +1502,7 @@ Konversationskurse Enhanced Card Styles
         gap: 6px;
     }
 
-    .header-image {
+    .minutes-image {
 	max-width: 100%;	
     }
 
