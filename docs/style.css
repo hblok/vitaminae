@@ -142,7 +142,7 @@ Header with Image
     overflow: hidden;
 }
 
-.header-image {
+.page-header-image {
     max-width: 100%;
     height: auto;
     display: block;
@@ -1028,6 +1028,16 @@ Responsive Design
         padding: 16px 24px;
     }
 
+    .trial-button-container h3 {
+	font-size: 2rem;
+	color: var(--color-navy);
+	margin-bottom: 32px;
+	font-weight: 800;
+	text-align: center;
+	line-height: 1;
+	font-family: 'Fraunces', serif;
+    }    
+    
     .teacher-content-wrapper {
         flex-direction: column;  /* Stacked vertically on mobile */
     }
@@ -1124,7 +1134,7 @@ Konversationskurse Enhanced Card Styles
 ============================================ */
 
 /* Main Container - Centered and Compact */
-.konv-main-container {
+.main-container {
     width: 100%;
 
     /*grid-column: 1 / -1;*/
@@ -1133,7 +1143,7 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Border Box Container */
-.konv-border-box {
+.border-box {
     background-color: #ffffff;
     border: 2px solid #20B2AA;
     border-radius: 32px;
@@ -1144,7 +1154,7 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Decorative corner accent */
-.konv-border-box::before {
+.border-box::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1155,7 +1165,7 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Headline */
-.konv-headline {
+.headline {
     text-align: center;
     font-size: 1.8em;
     font-weight: 800;
@@ -1168,7 +1178,7 @@ Konversationskurse Enhanced Card Styles
     line-height: 1.2;
 }
 
-.konv-headline::after {
+.headline::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1181,7 +1191,7 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Two-Column Grid Layout */
-.konv-courses-grid {
+.courses-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -1190,7 +1200,7 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Individual Course Card */
-.konv-course-card {
+.course-card {
     background-color: #f8f8f8;
     border: 1px solid #e0e0e0;
     max-width: 12em;
@@ -1199,7 +1209,7 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Header Banner */
-.konv-header-banner {
+.header-banner {
     text-align: center;
     margin: 0 0 8px 0;
     padding: 0;
@@ -1207,7 +1217,7 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Header Image */
-.konv-header-image {
+.header-image {
     max-width: 100%;
 
     height: 3.1em;
@@ -1229,13 +1239,13 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Pricing Section */
-.konv-pricing-section {
+.pricing-section {
     padding: 0;
     margin-bottom: 8px;
 }
 
 /* Arrow-shaped Pricing Banner */
-.konv-pricing-banner {
+.pricing-banner {
     /*background-color: #FF8C00;*/
     color: #ffffff;
     text-align: center;
@@ -1250,32 +1260,29 @@ Konversationskurse Enhanced Card Styles
     line-height: 1.3;
 }
 
-.konv-pricing-banner {
+.pricing-banner {
     position: relative;
     display: inline-block;
 }
 
-.konv-pricing-image {
+.pricing-image {
     max-width: 10em;
     display: block;
 }
 
-.konv-pricing-text {
+.pricing-text {
     position: absolute;
-
     top: 50%;
     left: 50%;
-
     font-size: 0.8em;
     transform: translate(-49%, -70%);
-
     color: white;
     font-weight: bold;
     white-space: nowrap;
 }
 
 /* Package Banner */
-.konv-package-banner {
+.package-banner {
 
     color: #ffffff;
     text-align: center;
@@ -1295,7 +1302,7 @@ Konversationskurse Enhanced Card Styles
     font-size: 0.9em;
 }
 
-.konv-package-image {
+.package-image {
     max-width: 185px;
 }
 
@@ -1311,7 +1318,7 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Features Section */
-.konv-features-section {
+.features-section {
     padding: 0;
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
@@ -1320,7 +1327,7 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Feature Items - Now as a unified block */
-.konv-feature-item {
+.feature-item {
     display: flex;
     align-items: center;
     margin-bottom: 0;
@@ -1332,17 +1339,17 @@ Konversationskurse Enhanced Card Styles
     transition: background-color 0.2s ease;
 }
 
-.konv-feature-item:hover {
+.feature-item:hover {
     background-color: #f8f8f8;
 }
 
 /* Remove bottom border from last item */
-.konv-feature-item:last-child {
+.feature-item:last-child {
     border-bottom: none;
 }
 
 /* Feature Icon */
-.konv-feature-icon {
+.feature-icon {
     flex-shrink: 0;
     width: 28px;
     height: 28px;
@@ -1355,13 +1362,13 @@ Konversationskurse Enhanced Card Styles
     background-color: #e8f4f8;
 }
 
-.konv-feature-image {
+.feature-image {
 
     max-width: 2.5em;
     margin-right: 1em;
 }
 
-.konv-feature-text {
+.feature-text {
     flex-grow: 1;
     color: #444;
     font-weight: 500;
@@ -1369,15 +1376,15 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Specific Icon Colors */
-.konv-icon-speech { color: #20B2AA; }
-.konv-icon-group { color: #FF8C00; }
-.konv-icon-book { color: #4169E1; }
-.konv-icon-person { color: #32CD32; }
-.konv-icon-building { color: #9370DB; }
-.konv-icon-fun { color: #FF1493; }
+.icon-speech { color: #20B2AA; }
+.icon-group { color: #FF8C00; }
+.icon-book { color: #4169E1; }
+.icon-person { color: #32CD32; }
+.icon-building { color: #9370DB; }
+.icon-fun { color: #FF1493; }
 
 /* Description Section */
-.konv-description-section {
+.description-section {
     background-color: #f0fdf9;
     border: 1px solid #20B2AA;
     border-radius: 6px;
@@ -1385,7 +1392,7 @@ Konversationskurse Enhanced Card Styles
     margin-top: 10px;
 }
 
-.konv-description-title {
+.description-title {
     font-size: 1em;
     font-weight: bold;
     color: #20B2AA;
@@ -1393,7 +1400,7 @@ Konversationskurse Enhanced Card Styles
     text-align: center;
 }
 
-.konv-description-text {
+.description-text {
     font-size: 0.85em;
     color: #444;
     line-height: 1.4;
@@ -1402,13 +1409,13 @@ Konversationskurse Enhanced Card Styles
 }
 
 /* Benefits List - Inline Style */
-.konv-benefits-list {
+.benefits-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.konv-benefit-item {
+.benefit-item {
     display: block;
     margin-right: 8px;
     margin-bottom: 4px;
@@ -1418,20 +1425,20 @@ Konversationskurse Enhanced Card Styles
     line-height: 1.4;
 }
 
-.konv-benefit-icon {
+.benefit-icon {
     margin-right: 3px;
     font-size: 1em;
 }
 
 /* Footer */
-.konv-footer {
+.footer {
     text-align: center;
     padding: 8px;
     margin-top: 12px;
     border-top: 1px solid #e0e0e0;
 }
 
-.konv-footer-text {
+.footer-text {
     color: #666;
     font-size: 0.7em;
 }
@@ -1439,35 +1446,36 @@ Konversationskurse Enhanced Card Styles
 /* Responsive Design */
 @media (max-width: 500px) {
 
-    .konv-main-container {
+    .main-container {
         max-width: 100%;
     }
 
-    .konv-border-box {
+    .border-box {
         padding: 12px;
         border-radius: 8px;
     }
 
-    .konv-headline {
+    .headline {
         font-size: 1.5em;
         margin-bottom: 12px;
     }
 
     /* Keep cards side-by-side on mobile with smaller gap */
-    .konv-courses-grid {
+    .courses-grid {
         grid-template-columns: 1fr 1fr;
         gap: 6px;
     }
 
-    .konv-header-image {
-	max-width: 9em;
+    .header-image {
+	max-width: 100%;	
     }
 
-    .konv-pricing-banner {
+    .pricing-banner {
         font-size: 1em;
         padding: 6px 10px;
     }
 
+    /*
     .course-minutes {
 	position: absolute;
 	font-family: Varela Round, sans-serif;
@@ -1477,12 +1485,13 @@ Konversationskurse Enhanced Card Styles
 	font-weight: bold;
 	white-space: nowrap;
     }
+   */
     
-    .konv-pricing-image {
+    .pricing-image {
         max-width: 200px;
     }
 
-    .konv-package-banner {
+    .package-banner {
         font-size: 0.8em;
     }
 
@@ -1493,28 +1502,38 @@ Konversationskurse Enhanced Card Styles
     }
  
 
-    .konv-feature-item {
+    .feature-item {
         padding: 5px 6px;
         font-size: 0.7em;
     }
 
-    .konv-feature-icon {
+    .feature-icon {
         width: 24px;
         height: 24px;
         font-size: 0.8em;
     }
 
-    .konv-description-section {
+    .description-section {
         padding: 10px;
     }
 
-    .konv-description-text {
+    .description-text {
         font-size: 0.8em;
     }
 
-    .konv-benefit-item {
+    .benefit-item {
         display: block;
         margin-bottom: 5px;
         font-size: 0.85em;
     }
+
+    .trial-button-container h3 {
+	font-size: 2rem;
+	color: var(--color-navy);
+	margin-bottom: 32px;
+	font-weight: 800;
+	text-align: center;
+	line-height: 1;
+	font-family: 'Fraunces', serif;
+    }    
 }
