@@ -1448,9 +1448,10 @@ Konversationskurse Enhanced Card Styles
         margin-bottom: 12px;
     }
 
+    /* Keep cards side-by-side on mobile with smaller gap */
     .konv-courses-grid {
-        grid-template-columns: 1fr;
-        gap: 8px;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
     }
 
     .konv-header-image {
@@ -1468,6 +1469,12 @@ Konversationskurse Enhanced Card Styles
 
     .konv-package-banner {
         font-size: 0.8em;
+    }
+
+    /* Adjust text positioning for mobile */
+    .konv-package-text {
+        transform: translate(-115%, -15%);
+        font-size: 0.7em;
     }
 
     .konv-feature-item {
