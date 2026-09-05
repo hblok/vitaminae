@@ -181,7 +181,11 @@ body.vibrant .lvl{border-color:var(--gold);}
 .lvl-name{font-size:.68rem;color:var(--muted);margin-top:.2rem;line-height:1.3;}
 
 /* ── ACCORDION ── */
-.courses-stack{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:.9rem;}
+.courses-stack{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);
+  grid-auto-flow:column;align-items:start;gap:1.1rem 1.75rem;
+}
 details.ccard{
   background:var(--white);border-radius:var(--r);
   box-shadow:0 2px 10px rgba(30,45,94,.07);overflow:hidden;
@@ -239,14 +243,16 @@ body.vibrant .ppkt{background:var(--navy);}
 .flist li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:.05rem;}
 
 /* ── NEW COURSES (Okt 2026) ── */
-.schedule-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;max-width:900px;margin:0 auto;}
-.sched-col{background:var(--white);border-radius:var(--r);padding:1.75rem;box-shadow:0 2px 12px rgba(30,45,94,.07);}
-.sched-title{font-family:var(--head);font-size:1.2rem;color:var(--navy);margin-bottom:1rem;}
-.sched-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .6rem;padding:.55rem 0;border-top:1px solid rgba(30,45,94,.08);}
+.schedule-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.25rem;max-width:1040px;margin:0 auto;}
+.sched-col{background:var(--white);border-radius:var(--r);padding:2.25rem;border-top:4px solid var(--terra);box-shadow:0 2px 12px rgba(30,45,94,.07);}
+body.vibrant .sched-col{border-top-color:var(--navy);}
+.sched-title{font-family:var(--head);font-size:1.5rem;color:var(--navy);margin-bottom:.35rem;}
+.sched-sub{font-size:.88rem;font-weight:600;color:var(--muted);margin-bottom:1.4rem;}
+.sched-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .7rem;padding:.75rem 0;border-top:1px solid rgba(30,45,94,.08);}
 .sched-row:first-of-type{border-top:none;}
-.sched-day{font-weight:700;color:var(--terra);font-size:.85rem;min-width:80px;}
-.sched-time{font-size:.85rem;color:var(--muted);min-width:80px;}
-.sched-desc{font-size:.9rem;color:var(--text);}
+.sched-day{font-weight:700;color:var(--terra);font-size:.92rem;min-width:88px;}
+.sched-time{font-size:.92rem;color:var(--muted);min-width:88px;}
+.sched-desc{font-size:1rem;color:var(--text);}
 
 /* ── TESTIMONIALS ── */
 #testimonials{background:var(--navy);}
@@ -400,6 +406,7 @@ body.js-reveal [data-reveal].vis{opacity:1;transform:none;}
   .about-grid,.contact-grid{grid-template-columns:1fr;}
   .levels{grid-template-columns:repeat(3,1fr);}
   .price-row,.flist,.loc-grid,.schedule-grid{grid-template-columns:1fr;}
+  .courses-stack{grid-template-columns:1fr;grid-auto-flow:row;}
   .nav-links{display:none;}
 }
 </style>
@@ -671,28 +678,17 @@ body.js-reveal [data-reveal].vis{opacity:1;transform:none;}
     <h2 class="h2">Neue Spanischkurse ab Oktober 2026</h2>
   </div>
 
-  <div class="price-row" style="max-width:860px;margin:0 auto 3rem" data-reveal>
-    <div class="pcard">
-      <div class="pdur">⭐ Standardkurse</div>
-      <div class="pamt" style="font-size:1.3rem">CHF 840.–</div>
-      <div class="punit">12 Lektionen · 90 Minuten · Max. 5 Teilnehmende</div>
-    </div>
-    <div class="pcard">
-      <div class="pdur">🗣️ Konversationskurse</div>
-      <div class="pamt" style="font-size:1.3rem">CHF 475.–</div>
-      <div class="punit">10 Lektionen · 60 Minuten · Max. 5 Teilnehmende</div>
-    </div>
-  </div>
-
   <div class="schedule-grid" data-reveal>
     <div class="sched-col">
-      <h3 class="sched-title">Standardkurse</h3>
-      <div class="sched-row"><div class="sched-day">Montag</div><div class="sched-time">12:00–13:30</div><div class="sched-desc">A1.1 – Deine ersten Schritte auf Spanisch</div></div>
+      <h3 class="sched-title">⭐ Standardkurse</h3>
+      <p class="sched-sub">12 Lektionen · 90 Minuten · Max. 5 Teilnehmende · CHF 840.–</p>
+      <div class="sched-row"><div class="sched-day">Montag</div><div class="sched-time">12:00–13:30</div><div class="sched-desc">A1.1 Spanisch Anfänger Modul 1 · 12 Lektionen à 90 Minuten – CHF 840.–</div></div>
       <div class="sched-row"><div class="sched-day">Dienstag</div><div class="sched-time">12:00–13:30</div><div class="sched-desc">A2.1 – Spanisch für den Alltag</div></div>
       <div class="sched-row"><div class="sched-day">Donnerstag</div><div class="sched-time">12:00–13:30</div><div class="sched-desc">B1.1 – Selbstständig kommunizieren</div></div>
     </div>
     <div class="sched-col">
-      <h3 class="sched-title">Konversationskurse</h3>
+      <h3 class="sched-title">🗣️ Konversationskurse</h3>
+      <p class="sched-sub">10 Lektionen · 60 Minuten · Max. 5 Teilnehmende · CHF 475.–</p>
       <div class="sched-row"><div class="sched-day">Montag</div><div class="sched-time">11:00–12:00</div><div class="sched-desc">Konversation A2–B1</div></div>
       <div class="sched-row"><div class="sched-day">Dienstag</div><div class="sched-time">11:00–12:00</div><div class="sched-desc">Konversation B1–B2</div></div>
       <div class="sched-row"><div class="sched-day">Donnerstag</div><div class="sched-time">11:00–12:00</div><div class="sched-desc">Konversation B2–C1</div></div>
