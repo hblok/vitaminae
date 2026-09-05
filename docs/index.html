@@ -1,1147 +1,955 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>
-    Vitamina E - Spanischkurse in Zürich
-    </title>
-    <link href="https://fonts.googleapis.com/" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;family=Fraunces:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
-    <link href="style.css" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitamina E – Español con energía | Spanischkurse Zürich</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --navy:#1e2d5e; --navy2:#26387a; --terra:#d45626; --terra2:#b83d18;
+  --gold:#f5973d; --green:#2e7d52; --teal:#0d7f8f; --cream:#fdf9f3;
+  --white:#fff; --text:#1a1a2e; --muted:#5a5a78;
+  --head:'Playfair Display',Georgia,serif;
+  --body:'DM Sans',system-ui,sans-serif;
+  --r:12px; --sh:0 4px 28px rgba(30,45,94,.12);
+  --cta:var(--terra); --cta2:var(--terra2);
+  --sec:#fdf9f3; --sec2:#fff;
+}
+body.vibrant {
+  --head:'DM Sans',system-ui,sans-serif;
+  --cta:var(--gold); --cta2:#e0872a;
+  --sec:#fff; --sec2:#f8f4ee;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:18px;}
+body{font-family:var(--body);color:var(--text);background:var(--sec);line-height:1.65;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{font-family:var(--head);line-height:1.18;}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:var(--white);box-shadow:0 2px 16px rgba(0,0,0,.07);
+  padding:0 clamp(1.5rem,5vw,5rem);
+  display:flex;align-items:center;justify-content:space-between;height:68px;
+}
+.nav-brand{
+  font-family:var(--head);font-size:1.35rem;font-weight:700;color:var(--navy);
+  letter-spacing:.01em;white-space:nowrap;
+}
+.nav-brand em{font-style:normal;color:var(--terra);}
+.nav-links{display:flex;gap:1.6rem;align-items:center;list-style:none;}
+.nav-links a{font-size:.875rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--text);transition:color .18s;white-space:nowrap;}
+.nav-links a:hover{color:var(--terra);}
+.btn-nav{
+  background:var(--cta);color:var(--white)!important;
+  padding:.55rem 1.4rem;border-radius:40px;font-weight:700;
+  transition:background .2s,transform .12s;white-space:nowrap;
+}
+.btn-nav:hover{background:var(--cta2)!important;transform:translateY(-1px);}
+
+/* ── HERO ── */
+#home{
+  background:var(--navy);
+  min-height:92svh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:5rem clamp(1.5rem,6vw,6rem) 5rem;
+  gap:0;position:relative;overflow:hidden;
+}
+#home::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 90% 75% at 50% 38%,#2a3d7a 0%,#1a2450 55%,#0f1730 100%);
+}
+.hero-left{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;max-width:760px;}
+.hero-logo{
+  width:min(760px,94%);border-radius:18px;
+  box-shadow:0 28px 80px rgba(0,0,0,.5);margin-bottom:2.6rem;
+}
+.hero-badge{
+  display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
+  width:150px;height:150px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--terra));
+  color:var(--white);
+  font-family:var(--body);font-weight:800;font-size:.95rem;line-height:1.3;text-align:center;
+  box-shadow:0 14px 34px rgba(0,0,0,.4),0 0 0 4px rgba(255,255,255,.18);
+  transform:rotate(-6deg);transition:transform .2s;
+  animation:badgePop 2.6s ease-in-out infinite;
+}
+.hero-badge:hover{transform:rotate(-6deg) scale(1.06);}
+.hero-badge-star{font-size:1.35rem;margin-bottom:.15rem;}
+body.vibrant .hero-badge{background:linear-gradient(135deg,var(--terra),var(--gold));}
+@keyframes badgePop{
+  0%,100%{transform:rotate(-6deg) scale(1);}
+  50%{transform:rotate(-3deg) scale(1.05);}
+}
+@media(max-width:480px){
+  .hero-badge{width:120px;height:120px;font-size:.8rem;}
+  .hero-badge-star{font-size:1.1rem;}
+}
+.hero-h1{
+  font-family:var(--head);
+  font-size:clamp(2.1rem,4.4vw,3.4rem);color:var(--white);
+  font-weight:700;margin-bottom:.9rem;text-wrap:balance;
+  text-shadow:0 2px 20px rgba(0,0,0,.3);
+}
+body.vibrant .hero-h1{color:var(--gold);}
+.hero-pills{
+  display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2.2rem;justify-content:center;
+}
+.hero-pill{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
+  border-radius:40px;padding:.35rem .9rem;
+  font-size:.82rem;font-weight:500;color:rgba(255,255,255,.85);
+}
+a.hero-pill{transition:background .18s,border-color .18s;}
+a.hero-pill:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.4);}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+.btn-primary{
+  background:var(--cta);color:var(--white);
+  padding:.85rem 2rem;border-radius:50px;
+  font-weight:700;font-size:.95rem;
+  display:inline-flex;align-items:center;gap:.5rem;
+  transition:background .2s,transform .15s,box-shadow .15s;
+}
+.btn-primary:hover{background:var(--cta2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.25);}
+.btn-ghost{
+  border:2px solid rgba(255,255,255,.4);color:var(--white);
+  padding:.85rem 2rem;border-radius:50px;
+  font-weight:600;font-size:.95rem;
+  transition:border-color .2s,background .2s;
+}
+.btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.1);}
+.hero-right{
+  position:relative;z-index:1;
+  display:none;
+}
+.hero-photo{
+  width:min(460px,100%);filter:drop-shadow(0 24px 56px rgba(0,0,0,.55));
+  margin-bottom:-4rem;
+}
+
+/* ── USP BAR ── */
+.usp-bar{
+  background:var(--navy);
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+body.vibrant .usp-bar{background:var(--terra);}
+.usp-item{
+  padding:2.2rem 1rem;text-align:center;color:var(--white);
+  border-right:1px solid rgba(255,255,255,.08);
+}
+.usp-item:last-child{border-right:none;}
+.usp-num{
+  font-family:var(--head);font-size:2.6rem;font-weight:700;
+  color:var(--gold);display:block;line-height:1;
+}
+body.vibrant .usp-num{color:var(--white);}
+.usp-txt{font-size:.85rem;opacity:.8;margin-top:.3rem;}
+
+/* ── SHARED SECTION ── */
+.section{padding:5.5rem clamp(1.5rem,6vw,7rem);}
+.section-alt{background:var(--sec2);}
+#neue-kurse{background:#fbe8d7;}
+.lbl{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:.6rem;}
+.section-dark .lbl{color:var(--gold);}
+.h2{font-family:var(--head);font-size:clamp(1.75rem,3.5vw,2.7rem);color:var(--navy);margin-bottom:.9rem;text-wrap:balance;}
+.section-dark .h2{color:var(--white);}
+.lead{font-size:1.05rem;color:var(--muted);max-width:640px;line-height:1.8;margin-bottom:2.5rem;}
+.section-dark .lead{color:rgba(255,255,255,.68);}
+
+/* ── FLORAL ── */
+.floral{display:flex;justify-content:center;padding:.5rem 0;background:var(--sec);}
+.floral.alt{background:var(--sec2);}
+.floral img{width:min(480px,88vw);}
+
+/* ── ABOUT ── */
+#ueber-mich{background:var(--sec);}
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:4.5rem;align-items:center;}
+.about-photo-wrap{
+  position:relative;background:var(--cream);
+  border-radius:24px;overflow:hidden;
+  box-shadow:var(--sh);
+  max-width:380px;margin:0 auto;
+}
+body.vibrant .about-photo-wrap{
+  border-radius:40% 60% 55% 45%/50% 45% 55% 50%;
+  background:linear-gradient(135deg,#e8f4f0 0%,#fdf9f3 100%);
+}
+.about-photo-wrap img{width:100%;object-fit:cover;}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem;}
+.chip{
+  background:var(--cream);border:1px solid rgba(30,45,94,.14);
+  border-radius:20px;padding:.38rem 1rem;
+  font-size:.82rem;font-weight:500;color:var(--navy);
+}
+body.vibrant .chip{background:rgba(30,45,94,.05);border-color:rgba(30,45,94,.2);}
+
+/* ── LEVEL GRID ── */
+.levels{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:.75rem;
+  margin-bottom:2.5rem;
+}
+.lvl{
+  background:var(--white);border:2px solid rgba(30,45,94,.1);
+  border-radius:10px;padding:.75rem .5rem;text-align:center;
+}
+body.vibrant .lvl{border-color:var(--gold);}
+.lvl-code{font-weight:800;font-size:1.05rem;color:var(--navy);}
+.lvl-name{font-size:.68rem;color:var(--muted);margin-top:.2rem;line-height:1.3;}
+
+/* ── ACCORDION ── */
+.courses-stack{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);
+  grid-auto-flow:column;align-items:start;gap:1.1rem 1.75rem;
+}
+details.ccard{
+  background:var(--white);border-radius:var(--r);
+  box-shadow:0 2px 10px rgba(30,45,94,.07);overflow:hidden;
+  transition:box-shadow .2s;
+}
+details.ccard[open]{box-shadow:var(--sh);}
+body.vibrant details.ccard[open]{outline:2px solid var(--gold);}
+summary.csumm{
+  list-style:none;cursor:pointer;
+  padding:1.35rem 1.75rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:var(--white);user-select:none;
+  transition:background .15s;
+}
+summary.csumm::-webkit-details-marker{display:none;}
+details.ccard[open] summary.csumm{background:var(--navy);color:var(--white);}
+.cname{font-family:var(--head);font-size:1.2rem;font-weight:600;color:var(--navy);}
+details.ccard[open] .cname{color:var(--white);}
+.cmeta{font-size:.8rem;color:var(--muted);margin-top:.15rem;}
+details.ccard[open] .cmeta{color:rgba(255,255,255,.6);}
+.chevron{
+  flex-shrink:0;width:28px;height:28px;border-radius:50%;
+  border:2px solid rgba(30,45,94,.25);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;color:var(--navy);
+  transition:transform .3s,border-color .15s,color .15s;
+}
+details.ccard[open] .chevron{transform:rotate(180deg);border-color:rgba(255,255,255,.4);color:var(--white);}
+.cbody{padding:2rem 1.75rem;}
+.price-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.75rem;}
+.pcard{background:var(--cream);border-radius:10px;padding:1.4rem 1.3rem;}
+body.vibrant .pcard{background:#f8f4ee;}
+.pdur{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.4rem;}
+.pamt{font-family:var(--head);font-size:2rem;font-weight:700;color:var(--navy);}
+.punit{font-size:.85rem;color:var(--muted);}
+.ppkt{
+  display:inline-block;margin-top:.7rem;
+  background:var(--terra);color:var(--white);
+  border-radius:6px;padding:.3rem .75rem;font-size:.8rem;font-weight:700;
+}
+body.vibrant .ppkt{background:var(--navy);}
+.psave{font-size:.72rem;color:var(--muted);margin-top:.2rem;}
+.por{
+  background:var(--cream);border-radius:10px;padding:1.5rem;
+  text-align:center;font-size:.95rem;color:var(--muted);margin-bottom:1.5rem;
+}
+.por strong{display:block;font-size:1.15rem;color:var(--navy);margin-bottom:.3rem;}
+.flist{
+  list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.55rem;
+}
+.flist li{
+  display:flex;align-items:flex-start;gap:.5rem;
+  font-size:.88rem;color:var(--text);padding:.35rem 0;
+}
+.flist li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:.05rem;}
+
+/* ── NEW COURSES (Okt 2026) ── */
+.schedule-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.25rem;max-width:1040px;margin:0 auto;}
+.sched-col{background:var(--white);border-radius:var(--r);padding:2.25rem;border-top:4px solid var(--terra);box-shadow:0 2px 12px rgba(30,45,94,.07);}
+body.vibrant .sched-col{border-top-color:var(--navy);}
+.sched-title{font-family:var(--head);font-size:1.5rem;color:var(--navy);margin-bottom:.35rem;}
+.sched-sub{font-size:.88rem;font-weight:600;color:var(--muted);margin-bottom:1.4rem;}
+.sched-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .7rem;padding:.75rem 0;border-top:1px solid rgba(30,45,94,.08);}
+.sched-row:first-of-type{border-top:none;}
+.sched-day{font-weight:700;color:var(--terra);font-size:.92rem;min-width:88px;}
+.sched-time{font-size:.92rem;color:var(--muted);min-width:88px;}
+.sched-desc{font-size:1rem;color:var(--text);}
+
+/* ── TESTIMONIALS ── */
+#testimonials{background:var(--navy);}
+body.vibrant #testimonials{background:var(--terra);}
+.t-wrap{position:relative;overflow:hidden;}
+.t-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);}
+.t-slide{min-width:100%;padding:.5rem 3.5rem;}
+.tcard{
+  max-width:700px;margin:0 auto;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:20px;padding:3rem 3rem;text-align:center;
+}
+.tquote{
+  font-family:var(--head);font-size:clamp(.95rem,2.2vw,1.25rem);
+  color:var(--white);font-style:italic;line-height:1.7;margin-bottom:1.75rem;
+}
+.tauthor{font-weight:700;color:var(--gold);font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;}
+body.vibrant .tauthor{color:var(--white);}
+.t-dots{display:flex;justify-content:center;gap:.65rem;margin-top:2rem;}
+.t-dot{
+  width:9px;height:9px;border-radius:50%;
+  background:rgba(255,255,255,.25);border:none;cursor:pointer;
+  transition:background .2s,transform .2s;padding:0;
+}
+.t-dot.on{background:var(--gold);transform:scale(1.4);}
+body.vibrant .t-dot.on{background:var(--white);}
+.t-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:40px;height:40px;border-radius:50%;border:none;
+  background:rgba(255,255,255,.15);color:var(--white);font-size:1rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .18s;z-index:2;
+}
+.t-btn:hover{background:rgba(255,255,255,.3);}
+.t-prev{left:.5rem;} .t-next{right:.5rem;}
+
+/* Cards mode (hidden by default) */
+.t-cards{
+  display:none;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+  gap:1.5rem;max-width:1100px;margin:0 auto;
+}
+.t-cards.active{display:grid;}
+.t-cards .tcard{max-width:none;text-align:left;font-size:.88rem;}
+.t-cards .tquote{font-size:.95rem;}
+
+/* ── CTA BANNER ── */
+.cta-banner{
+  background:var(--terra);color:var(--white);
+  padding:5.5rem clamp(1.5rem,6vw,7rem);
+  text-align:center;
+}
+body.vibrant .cta-banner{background:var(--navy);}
+.cta-banner h2{font-family:var(--head);font-size:clamp(1.7rem,3.5vw,2.8rem);color:var(--white);margin-bottom:.8rem;}
+.cta-banner p{color:rgba(255,255,255,.8);margin-bottom:2.5rem;font-size:1.05rem;}
+.btn-white{
+  background:var(--white);color:var(--terra);
+  padding:.9rem 2.2rem;border-radius:50px;
+  font-weight:700;font-size:.95rem;
+  display:inline-flex;align-items:center;gap:.5rem;
+  transition:transform .15s,box-shadow .15s;
+}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.2);}
+body.vibrant .btn-white{color:var(--navy);}
+.btn-outline-w{
+  border:2px solid rgba(255,255,255,.45);color:var(--white);
+  padding:.9rem 2.2rem;border-radius:50px;
+  font-weight:600;font-size:.95rem;
+  display:inline-flex;align-items:center;gap:.5rem;
+  transition:border-color .2s,background .2s;
+}
+.btn-outline-w:hover{border-color:var(--white);background:rgba(255,255,255,.12);}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+/* ── LOCATIONS ── */
+#standorte{background:var(--sec);}
+.loc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem;margin-top:2.5rem;max-width:700px;margin-left:auto;margin-right:auto;}
+.loc-card{
+  background:var(--white);border-radius:var(--r);
+  padding:2rem;border-top:4px solid var(--terra);
+  box-shadow:0 2px 12px rgba(30,45,94,.07);
+}
+body.vibrant .loc-card{border-top-color:var(--navy);}
+.loc-card h3{font-family:var(--head);font-size:1.2rem;color:var(--navy);margin-bottom:.65rem;}
+.loc-card address{font-style:normal;font-size:.88rem;color:var(--muted);line-height:1.65;}
+.loc-link{
+  display:inline-block;margin-top:.9rem;font-size:.82rem;
+  font-weight:600;color:var(--terra);
+}
+.loc-link:hover{text-decoration:underline;}
+
+/* ── CONTACT ── */
+#kontakt{background:var(--sec2);}
+.contact-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:5rem;align-items:start;}
+.cform{display:flex;flex-direction:column;gap:.9rem;}
+.fg{display:flex;flex-direction:column;gap:.35rem;}
+.fg label{font-weight:600;font-size:.85rem;color:var(--navy);}
+.fg input,.fg textarea{
+  border:2px solid rgba(30,45,94,.15);border-radius:8px;
+  padding:.7rem 1rem;font-family:var(--body);font-size:.9rem;
+  color:var(--text);background:var(--white);transition:border-color .2s;
+}
+.fg input:focus,.fg textarea:focus{outline:none;border-color:var(--terra);}
+.fg textarea{min-height:110px;resize:vertical;}
+.btn-submit{
+  background:var(--cta);color:var(--white);border:none;
+  padding:.85rem 2rem;border-radius:50px;
+  font-family:var(--body);font-weight:700;font-size:.95rem;
+  cursor:pointer;align-self:flex-start;transition:background .2s,transform .12s;
+}
+.btn-submit:hover{background:var(--cta2);transform:translateY(-2px);}
+.contact-detail{display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:.95rem;margin-top:.6rem;}
+.contact-detail.email{color:var(--terra);}
+.contact-detail.wa{color:var(--green);}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy);color:rgba(255,255,255,.5);
+  text-align:center;padding:2rem 1.5rem;font-size:.82rem;
+}
+footer strong{color:var(--white);}
+
+/* ── TWEAKS PANEL ── */
+#tweaks{
+  position:fixed;bottom:1.75rem;right:1.75rem;z-index:200;
+  background:var(--white);border-radius:14px;
+  box-shadow:0 8px 36px rgba(0,0,0,.16);
+  padding:1.2rem 1.4rem;min-width:195px;
+  transition:opacity .2s,pointer-events .2s;
+}
+#tweaks.hidden{opacity:0;pointer-events:none;}
+.twk-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);margin-bottom:.9rem;}
+.twk-row{margin-bottom:.75rem;}
+.twk-lbl{font-size:.78rem;font-weight:600;color:var(--navy);margin-bottom:.35rem;}
+.twk-pills{display:flex;gap:.4rem;}
+.twk-pill{
+  padding:.32rem .8rem;border-radius:20px;
+  border:1.5px solid rgba(30,45,94,.2);
+  background:var(--white);font-size:.78rem;font-weight:500;
+  cursor:pointer;transition:all .15s;color:var(--text);
+}
+.twk-pill.on{background:var(--navy);color:var(--white);border-color:var(--navy);}
+
+/* ── REVEAL (progressive enhancement — hidden only when JS opts in) ── */
+body.js-reveal [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+body.js-reveal [data-reveal].vis{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .usp-bar{grid-template-columns:1fr;}
+  .about-grid,.contact-grid{grid-template-columns:1fr;}
+  .levels{grid-template-columns:repeat(3,1fr);}
+  .price-row,.flist,.loc-grid,.schedule-grid{grid-template-columns:1fr;}
+  .courses-stack{grid-template-columns:1fr;grid-auto-flow:row;}
+  .nav-links{display:none;}
+}
+</style>
 </head>
-<body>
-  <img src="https://hblok.net/vitaminae_ch.png" 
-     width="1" height="1" 
-     style="position:absolute; left:-9999px;" 
-     alt="" />
-  
-    <!-- Header with Image -->
-    <div class="header-image-container">
-    <img alt="Vitamina E - Español con energía" class="page-header-image" src="logo_es.png"/>
+<template id="__bundler_thumbnail" data-bg-color="#1e2d5e">
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="400" fill="#1e2d5e"/><circle cx="200" cy="200" r="118" fill="none" stroke="#f5973d" stroke-width="7"/><text x="200" y="248" font-family="Georgia,serif" font-size="150" font-weight="700" fill="#f5973d" text-anchor="middle">E</text></svg>
+</template>
+<body class="boutique" id="top">
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-brand">Vitamina <em>E</em></div>
+  <ul class="nav-links">
+    <li><a href="#ueber-mich">Über mich</a></li>
+    <li><a href="#kurse">Kurse</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#standorte">Standorte</a></li>
+    <li><a href="#kontakt" class="btn-nav">Probelektion buchen</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="home" data-screen-label="Hero">
+  <div class="hero-left">
+    <img src="uploads/logo-1780666673083.png" alt="Vitamina E – Español con energía" class="hero-logo">
+    <h1 class="hero-h1">Spanisch lernen.<br>Lebendig. Mit Energie.</h1>
+    <div class="hero-pills">
+      <span class="hero-pill">Zertifizierte Lehrerin</span>
+      <span class="hero-pill">Gruppen à 3–6 Personen</span>
+      <span class="hero-pill">Zürich &amp; Online</span>
+      <a href="#kurse" class="hero-pill">Kurse entdecken</a>
     </div>
-    <!-- Decorative Border -->
-    <div class="otomi-border">
+    <div class="hero-btns">
+      <a href="#kontakt" class="hero-badge"><span class="hero-badge-star">✨</span>Gratis<br>Probelektion<br>buchen</a>
     </div>
-    <!-- Decorative Shape Pattern -->
-    <div class="dot-pattern">
-    <img class="banner-image" src="footer_banner.png"/>
+  </div>
+</section>
+
+<!-- ── USP ── -->
+<div class="usp-bar" data-reveal>
+  <div class="usp-item">
+    <span class="usp-num">13+</span>
+    <div class="usp-txt">Jahre Unterrichten in Zürich</div>
+  </div>
+  <div class="usp-item">
+    <span class="usp-num">3–6</span>
+    <div class="usp-txt">Personen pro Gruppe</div>
+  </div>
+  <div class="usp-item">
+    <span class="usp-num">2+</span>
+    <div class="usp-txt">Standorte &amp; Online</div>
+  </div>
+</div>
+
+<!-- ── FLORAL ── -->
+<div class="floral">
+  <img src="uploads/other_images-1780666716206.png" alt="">
+</div>
+
+<!-- ── ABOUT ── -->
+<section class="section" id="ueber-mich" data-screen-label="Über mich">
+  <div class="about-grid">
+    <div class="about-photo-wrap" data-reveal>
+      <img src="uploads/gloria_photo-1780666695180.png" alt="Gloria – Spanischlehrerin Zürich">
     </div>
-    <!-- About Section -->
-    <section class="section-about">
-    <div class="floating-shapes">
-        <div class="floating-shape decorative-shape shape-flower bg-teal" style="width: 100px; height: 100px;">
-        </div>
-        <div class="floating-shape decorative-shape shape-circle bg-coral" style="width: 80px; height: 80px;">
-        </div>
-        <div class="floating-shape decorative-shape shape-leaf bg-green" style="width: 90px; height: 90px;">
-        </div>
+    <div data-reveal>
+      <p class="lbl">Ihre Lehrerin</p>
+      <h2 class="h2">¡Hola! Ich bin Gloria.</h2>
+      <p class="lead">Spanischlehrerin aus Monterrey, Mexiko – seit über 15 Jahren lebe und unterrichte ich in der Schweiz. Sprachen schaffen Verbindung, Nähe und neue Perspektiven.</p>
+      <p style="color:var(--muted);line-height:1.8;margin-bottom:1.25rem;">Nach meinem Studium der Angewandten Linguistik in Mexiko und meinem Master in Deutsch als Fremdsprache in der Schweiz habe ich meine Leidenschaft zum Beruf gemacht. Seit über 13 Jahren begleite ich Menschen in Zürich auf ihrem Weg ins Spanische – für Reisen, den Beruf oder einfach aus Freude am Lernen.</p>
+      <p style="color:var(--muted);line-height:1.8;margin-bottom:2rem;">Vitamina E steht für Energie, Leichtigkeit und echte Begegnungen. Für einen Unterricht, der motiviert, stärkt und Freude macht. Ich freue mich darauf, dich kennenzulernen!</p>
+      <div class="chips">
+        <span class="chip">Angewandte Linguistik</span>
+        <span class="chip">Master DaF (Schweiz)</span>
+        <span class="chip">13+ Jahre Erfahrung</span>
+        <span class="chip">SwissRE · UBS · Julius Bär</span>
+      </div>
     </div>
-    <div class="container">
-        <div class="content-box">
-        <h2>
-            Willkommen bei Vitamina E
-        </h2>
-        <p> Bei Vitamina E lernst Du Spanisch lebendig, praxisnah und mit Freude! 
-						Von Anfang an stehen Kommunikation, aktives Mitmachen und realer Sprachgebrauch im Mittelpunkt.
-In kleinen Gruppen von 3 bis 6 Teilnehmenden erhaltest Du viel Raum zum Sprechen, Üben und Austauschen. Die Kurse sind dynamisch, klar strukturiert, flexibel organisiert und auf deine persönlichen Ziele abgestimmt.
-In einer offenen, motivierenden Atmosphäre gewinnst Du schnell Sicherheit im Spanischen – und machst spürbare Fortschritte. Neben der Sprache entdeckst Du auch die Kultur der spanischsprachigen Welt authentisch und lebendig.
-Ob Anfänger oder Fortgeschrittene: Gemeinsam finden wir den passenden Kurs – in Manegg, Stauffacher oder online.
-Vitamina E – deine Spanisch-Dosis: Lernen, erleben, anwenden.
-            
+  </div>
+</section>
 
+<!-- ── FLORAL ── -->
+<div class="floral alt"><img src="uploads/other_images-1780666716206.png" alt=""></div>
 
+<!-- ── NEW COURSES (Okt 2026) ── -->
+<section class="section" id="neue-kurse" data-screen-label="Neue Kurse ab Oktober 2026">
+  <div style="text-align:center;margin-bottom:2.5rem">
+    <p class="lbl">Ab Oktober 2026</p>
+    <h2 class="h2">Neue Spanischkurse ab Oktober 2026</h2>
+  </div>
 
-        </p>
-        <div class="locations-section">
-            <h3>Standorte</h3>
-            <div class="locations-grid">
-                <div class="location-item">
-                    <h4><a href="https://maps.app.goo.gl/wynVdLRv6BMDCdy17" target="_blank" rel="noopener noreferrer">Manegg</a></h4>
-                    <ul class="location-address">
-                        <li><a href="https://maps.app.goo.gl/wynVdLRv6BMDCdy17" target="_blank" rel="noopener noreferrer">Spoom Green City, Regus 📍</a></li>
-                        <li><a href="https://maps.app.goo.gl/wynVdLRv6BMDCdy17" target="_blank" rel="noopener noreferrer">Pergamin II, Maneggstrasse 33<br>8041 Zurich</a></li>
-                    </ul>
-                </div>
-                <div class="location-item">
-                    <h4><a href="https://maps.app.goo.gl/4KMKEnyEzt8JHHJ2A" target="_blank" rel="noopener noreferrer">Stauffacher</a></h4>
-                    <ul class="location-address">
-                        <li><a href="https://maps.app.goo.gl/4KMKEnyEzt8JHHJ2A" target="_blank" rel="noopener noreferrer">Stauffacher Regus 📍</a></li>
-                        <li><a href="https://maps.app.goo.gl/4KMKEnyEzt8JHHJ2A" target="_blank" rel="noopener noreferrer">Badenerstrasse 47<br>8004 Zürich</a></li>
-                    </ul>
-                </div>
-                <div class="location-item online">
-                    <h4>Online</h4>
-                    <ul class="location-address">
-                        <li>Flexibel von überall lernen</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-            </div>
-        </div>
-        </div>
+  <div class="schedule-grid" data-reveal>
+    <div class="sched-col">
+      <h3 class="sched-title">⭐ Standardkurse</h3>
+      <p class="sched-sub">12&nbsp;Lektionen · 90&nbsp;Minuten ·<br>Max.&nbsp;5&nbsp;Teilnehmende · CHF&nbsp;840.–</p>
+      <div class="sched-row"><div class="sched-day">Montag</div><div class="sched-time">12:00–13:30</div><div class="sched-desc">A1.1 Spanisch Anfänger Modul&nbsp;1 · 12&nbsp;Lektionen à&nbsp;90&nbsp;Minuten –<br>CHF&nbsp;840.–</div></div>
+      <div class="sched-row"><div class="sched-day">Dienstag</div><div class="sched-time">12:00–13:30</div><div class="sched-desc">A2.1 – Spanisch für den Alltag</div></div>
+      <div class="sched-row"><div class="sched-day">Donnerstag</div><div class="sched-time">12:00–13:30</div><div class="sched-desc">B1.1 – Selbstständig kommunizieren</div></div>
     </div>
-    </section>
-    <!-- Teacher Section -->
-    <section class="section-teacher">
-    <div class="floating-shapes">
-        <div class="floating-shape decorative-shape shape-petal bg-magenta" style="width: 100px; height: 100px;">
-        </div>
-        <div class="floating-shape decorative-shape shape-flower bg-yellow" style="width: 80px; height: 80px;">
-        </div>
-        <div class="floating-shape decorative-shape shape-circle bg-purple" style="width: 90px; height: 90px;">
-        </div>
+    <div class="sched-col">
+      <h3 class="sched-title">🗣️ Konversationskurse</h3>
+      <p class="sched-sub">10&nbsp;Lektionen · 60&nbsp;Minuten ·<br>Max.&nbsp;5&nbsp;Teilnehmende · CHF&nbsp;475.–</p>
+      <div class="sched-row"><div class="sched-day">Montag</div><div class="sched-time">11:00–12:00</div><div class="sched-desc">Konversation A2–B1</div></div>
+      <div class="sched-row"><div class="sched-day">Dienstag</div><div class="sched-time">11:00–12:00</div><div class="sched-desc">Konversation B1–B2</div></div>
+      <div class="sched-row"><div class="sched-day">Donnerstag</div><div class="sched-time">11:00–12:00</div><div class="sched-desc">Konversation B2–C1</div></div>
     </div>
-    <div class="container">
-        <div class="content-box">
-        <h2>
-            Ihre Lehrerin
-        </h2>
-        <div class="teacher-content-wrapper">
-            <div class="teacher-intro">
-            <p> 
+  </div>
+</section>
 
+<!-- ── COURSES ── -->
+<section class="section" id="kurse" data-screen-label="Kurse">
+  <div style="text-align:center;margin-bottom:2rem">
+    <p class="lbl">Kursangebot</p>
+    <h2 class="h2">Die richtigen Kurse für dich.</h2>
+    <p class="lead" style="margin:0 auto 2rem">Alle Niveaustufen nach GER – von A1 bis C2.
+      Die Standardkurse sind in drei Module unterteilt. Jedes Modul umfasst 12 Lektionen.</p>
+  </div>
+  <div class="levels" data-reveal>
+    <div class="lvl"><div class="lvl-code">A1</div><div class="lvl-name">Erste Schritte</div></div>
+    <div class="lvl"><div class="lvl-code">A2</div><div class="lvl-name">Alltag</div></div>
+    <div class="lvl"><div class="lvl-code">B1</div><div class="lvl-name">Selbstständig</div></div>
+    <div class="lvl"><div class="lvl-code">B2</div><div class="lvl-name">Fließend</div></div>
+    <div class="lvl"><div class="lvl-code">C1</div><div class="lvl-name">Sehr gut</div></div>
+    <div class="lvl"><div class="lvl-code">C2</div><div class="lvl-name">Muttersprachlich</div></div>
+  </div>
 
+  <div class="courses-stack" data-reveal>
 
-Hola! Ich bin Gloria, Spanischlehrerin aus Monterrey, Mexiko, und lebe seit über 15 Jahren in der Schweiz.
-Sprachen sind für mich weit mehr als Worte – sie schaffen Verbindung, Nähe und neue Perspektiven. Genau diese Begeisterung begleitet mich seit vielen Jahren im Unterrichten.
-Nach meinem Studium der Angewandten Linguistik in Mexiko und meinem Master in Deutsch als Fremdsprache in der Schweiz habe ich meine Leidenschaft zum Beruf gemacht. Seit über 13 Jahren begleite ich Menschen in Zürich auf ihrem Weg ins Spanische – für Reisen, den Beruf oder einfach aus Freude am Lernen.
-Vitamina E - de Español habe ich gegründet, weil ich einen Lernraum schaffen wollte, in dem Spanisch lebendig wird: persönlich, motivierend und nah am echten Leben – mit Zeit zum Sprechen, Lachen und Wachsen.
-Vitamina E - de Español steht für Energie, Leichtigkeit und echte Begegnungen. Für einen Unterricht, der motiviert, stärkt und Freude macht.
-Ich freue mich darauf, dich kennenzulernen und gemeinsam die spanische Sprache und Kultur zu entdecken!
-                
-            </p>
-            </div>
-            <img alt="Gloria - Spanischlehrerin" class="teacher-photo" src="gloria.png"/>
+    <details class="ccard">
+      <summary class="csumm">
+        <div><div class="cname">Standardkurse</div><div class="cmeta">Gruppen · 3–6 Personen · 60 oder 90 Min.</div></div>
+        <div class="chevron">▾</div>
+      </summary>
+      <div class="cbody">
+        <div class="price-row">
+          <div class="pcard">
+            <div class="pdur">60 Minuten</div>
+            <div class="pamt">54 <span class="punit">CHF / Lek.</span></div>
+            <div class="ppkt">10er-Paket: 510 CHF</div>
+            <div class="psave">Spare 30 CHF</div>
+          </div>
+          <div class="pcard">
+            <div class="pdur">90 Minuten</div>
+            <div class="pamt">74 <span class="punit">CHF / Lek.</span></div>
+            <div class="ppkt">12er-Paket: 840 CHF</div>
+            <div class="psave">Spare 48 CHF</div>
+          </div>
         </div>
+        <ul class="flist">
+          <li>Dynamische Interaktion &amp; praxisnahe Grammatik</li>
+          <li>Kleine Gruppen – viel Raum zum Sprechen</li>
+          <li>Ergänzende Materialien (Kursbuch separat)</li>
+          <li>Individuelle Betreuung und Beratung</li>
+          <li>Raum inklusive</li>
+          <li>Jede Menge Spaß und Motivation</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="ccard">
+      <summary class="csumm">
+        <div><div class="cname">Konversationskurse</div><div class="cmeta">Ab A2/B1 · Fokus Sprechen &amp; Zuhören</div></div>
+        <div class="chevron">▾</div>
+      </summary>
+      <div class="cbody">
+        <div class="price-row">
+          <div class="pcard">
+            <div class="pdur">60 Minuten</div>
+            <div class="pamt">50 <span class="punit">CHF / Lek.</span></div>
+            <div class="ppkt">10er-Paket: 475 CHF</div>
+            <div class="psave">Spare 25 CHF</div>
+          </div>
+          <div class="pcard">
+            <div class="pdur">90 Minuten</div>
+            <div class="pamt">70 <span class="punit">CHF / Lek.</span></div>
+            <div class="ppkt">10er-Paket: 665 CHF</div>
+            <div class="psave">Spare 35 CHF</div>
+          </div>
         </div>
+        <ul class="flist">
+          <li>Praxisnah &amp; interaktiv – reale Kommunikationssituationen</li>
+          <li>Mehr Sicherheit und Selbstvertrauen</li>
+          <li>Gezielte Übungen zur mündlichen Ausdrucksfähigkeit</li>
+          <li>Flexible Methodik nach deinem Lerntempo</li>
+          <li>Fokus auf Sprechen &amp; Hörverständnis</li>
+          <li>Raum inklusive</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="ccard">
+      <summary class="csumm">
+        <div><div class="cname">Privatkurse</div><div class="cmeta">Einzelunterricht · Maximale Flexibilität</div></div>
+        <div class="chevron">▾</div>
+      </summary>
+      <div class="cbody">
+        <div class="price-row">
+          <div class="pcard">
+            <div class="pdur">60 Minuten</div>
+            <div class="pamt">90 <span class="punit">CHF / Lek.</span></div>
+            <div class="ppkt">10er-Paket: 850 CHF</div>
+            <div class="psave">Spare 50 CHF</div>
+          </div>
+          <div class="pcard">
+            <div class="pdur">90 Minuten</div>
+            <div class="pamt">120 <span class="punit">CHF / Lek.</span></div>
+            <div class="ppkt">10er-Paket: 1'150 CHF</div>
+            <div class="psave">Spare 50 CHF</div>
+          </div>
+        </div>
+        <ul class="flist">
+          <li>Individuell – auf deine Ziele zugeschnitten</li>
+          <li>Maximale Flexibilität bei Terminen</li>
+          <li>Gezielter Fokus auf relevante Themen</li>
+          <li>Intensives Sprechen, Hören und Schreiben</li>
+          <li>Vor Ort oder online</li>
+          <li>Raum inklusive</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="ccard">
+      <summary class="csumm">
+        <div><div class="cname">Reisekurse</div><div class="cmeta">Für Reisende · Praxisnahe Alltagssprache</div></div>
+        <div class="chevron">▾</div>
+      </summary>
+      <div class="cbody">
+        <div class="price-row">
+          <div class="pcard">
+            <div class="pdur">60 Minuten</div>
+            <div class="pamt">54 <span class="punit">CHF / Lek.</span></div>
+            <div class="ppkt">10er-Paket: 510 CHF</div>
+            <div class="psave">Spare 30 CHF</div>
+          </div>
+          <div class="pcard">
+            <div class="pdur">90 Minuten</div>
+            <div class="pamt">74 <span class="punit">CHF / Lek.</span></div>
+            <div class="ppkt">10er-Paket: 700 CHF</div>
+            <div class="psave">Spare 40 CHF</div>
+          </div>
+        </div>
+        <ul class="flist">
+          <li>Hotel, Restaurant, Transport &amp; Freizeit</li>
+          <li>Kleine Gruppen für volle Aufmerksamkeit</li>
+          <li>Typische Reisesituationen üben</li>
+          <li>Angepasst an deine Reisepläne</li>
+          <li>Intensivere Rollenspiele &amp; Szenarien</li>
+          <li>Raum inklusive</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="ccard">
+      <summary class="csumm">
+        <div><div class="cname">DELE Prüfungsvorbereitung</div><div class="cmeta">Offizielles Zertifikat · A2 bis C1</div></div>
+        <div class="chevron">▾</div>
+      </summary>
+      <div class="cbody">
+        <div class="por"><strong>Preis nach Absprache</strong>Zertifikat A2 bis C1 – klar, effizient und motivierend.</div>
+        <ul class="flist">
+          <li>Übungen nach offiziellem Prüfungsformat</li>
+          <li>Gezieltes Training aller Prüfungsfähigkeiten</li>
+          <li>Klare Strategien für jede Prüfungsaufgabe</li>
+          <li>Schneller Fortschritt mit konkreten Zielen</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="ccard">
+      <summary class="csumm">
+        <div><div class="cname">Firmenkurse</div><div class="cmeta">Spanisch für Ihr Team · Maßgeschneidert</div></div>
+        <div class="chevron">▾</div>
+      </summary>
+      <div class="cbody">
+        <div class="por"><strong>Preis nach Absprache</strong>Ideal für Geschäftsreisen, Meetings und Kund:innenkontakte.</div>
+        <ul class="flist">
+          <li>Individuell auf Ihr Team zugeschnitten</li>
+          <li>Praxisorientierte Kommunikation</li>
+          <li>Meetings vorbereiten &amp; trainieren</li>
+          <li>Erfahrung mit Swiss Re, UBS, Julius Bär</li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="section section-dark" id="testimonials" data-screen-label="Testimonials">
+  <div style="text-align:center;margin-bottom:3rem">
+    <p class="lbl">Was Teilnehmende sagen</p>
+    <h2 class="h2">Testimonios</h2>
+  </div>
+  <div class="t-wrap" id="tWrap">
+    <button class="t-btn t-prev" aria-label="Zurück">◀</button>
+    <div class="t-track" id="tTrack">
+      <div class="t-slide"><div class="tcard">
+        <p class="tquote">„Bei Gloria geht es nicht nur darum, die Sprache zu lernen, sondern viel mehr in die Kulturen der spanischsprechenden Länder einzutauchen. Der Unterricht ist kein klassischer Schulunterricht, sondern viel mehr ein gemütliches Treffen, worauf ich mich jede Woche freue."</p>
+        <div class="tauthor">Julia, 31 · Communication Manager</div>
+      </div></div>
+      <div class="t-slide"><div class="tcard">
+        <p class="tquote">„Mit ihrem mexikanischen Temperament ist sie Lehrerin aus Leidenschaft. Im Unterricht lernt man bei ihr fast automatisch. Der Unterricht hat mich großartig auf meine Reise durch Südamerika vorbereitet."</p>
+        <div class="tauthor">Judith, 40 · Architektin</div>
+      </div></div>
+      <div class="t-slide"><div class="tcard">
+        <p class="tquote">„Gloria ist seit über 6 Jahren meine Spanischlehrerin und einfach großartig. Der Unterricht ist super familiär, entspannt und gleichzeitig sehr effektiv. Sie fühlt sich eher wie eine Freundin als eine klassische Lehrerin an. Dank ihr macht Spanisch richtig Spaß!"</p>
+        <div class="tauthor">Sara</div>
+      </div></div>
+      <div class="t-slide"><div class="tcard">
+        <p class="tquote">„Ich hatte keine Vorkenntnisse und bin jetzt mit zwei Stunden pro Woche auf dem Niveau B1/B2. Die zwei Stunden sind für mich eher eine Entspannung als Arbeit – die Atmosphäre ist sehr entspannt, humorvoll und freundlich."</p>
+        <div class="tauthor">Tamara, 37 · Verkaufsdirektorin</div>
+      </div></div>
+      <div class="t-slide"><div class="tcard">
+        <p class="tquote">„Seit mehr als 5 Jahren besuche ich die Spanischkurse bei Gloria. Die Lektionen machen mir Spaß, sie sind immer interessant und abwechslungsreich. Gloria ist immer sehr gut und vielseitig vorbereitet."</p>
+        <div class="tauthor">Werner</div>
+      </div></div>
+      <div class="t-slide"><div class="tcard">
+        <p class="tquote">„Ich freue mich jede Woche auf den Kurs. Gloria hat viel Geduld. Der Unterricht ist immer sehr gut vorbereitet – interessant und abwechslungsreich: Grammatik, aktuelle Themen, Spiele …"</p>
+        <div class="tauthor">Rena</div>
+      </div></div>
     </div>
-    </section>
-    <!-- Courses Section -->
-    <section class="section-courses">
-    <div class="floating-shapes">
-        <div class="floating-shape decorative-shape shape-leaf bg-green" style="width: 100px; height: 100px;">
-        </div>
-        <div class="floating-shape decorative-shape shape-circle bg-orange" style="width: 80px; height: 80px;">
-        </div>
-        <div class="floating-shape decorative-shape shape-flower bg-teal" style="width: 90px; height: 90px;">
-        </div>
+    <button class="t-btn t-next" aria-label="Weiter">▶</button>
+  </div>
+  <div class="t-dots" id="tDots"></div>
+  <div class="t-cards" id="tCards"></div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<div class="cta-banner" data-screen-label="CTA">
+  <h2>Gönn dir deine erste Stunde voller Energie!</h2>
+  <p>Probiere Vitamina E unverbindlich aus – in einer kostenlosen Probelektion.</p>
+  <div class="cta-btns">
+    <a href="mailto:info@vitaminae.ch" class="btn-white">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      Per E-Mail buchen
+    </a>
+    <a href="#" data-wa-link class="btn-outline-w">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.82L.046 23.954 6.3 22.49A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.372l-.357-.213-3.7.97.988-3.607-.233-.371A9.818 9.818 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818 5.424 0 9.818 4.395 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+      Via WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ── LOCATIONS ── -->
+<section class="section" id="standorte" data-screen-label="Standorte">
+  <p class="lbl">Wo wir uns treffen</p>
+  <h2 class="h2">Standorte</h2>
+  <div class="loc-grid" data-reveal>
+    <div class="loc-card">
+      <h3>Zürich</h3>
+      <address>Zeughausstrasse 31<br>8004 Zürich</address>
+      <a href="https://share.google/zrnGJlObwDDANN9Tj" target="_blank" rel="noopener" class="loc-link">Auf Google Maps →</a>
     </div>
-    <div class="container">
-        <h2>
-        Die Kurse
-        </h2>
-        <div class="courses-intro">
-		  <p>
-        Bei Vitamina E orientiert sich der Unterricht auf allen Niveaustufen am Gemeinsamen Europäischen Referenzrahmen (GER). Er teilt den Lernweg in sechs klare Stufen ein – vom ersten "Hola" bis zur nahezu muttersprachlichen Beherrschung:</p>
-		  <div class="courses-intro-levels">
-		    <ul>
-		      <li>A1 – Deine ersten Schritte auf Spanisch</li>
-		      <li>A2 – Einfache Gespräche im Alltag</li>
-		      <li>B1 – Selbstständig kommunizieren</li>
-		      <li>B2 – Sicher und fließend sprechen</li>
-		      <li>C1 – Sehr gute, flexible Sprachkenntnisse</li>
-		      <li>C2 – Spanisch fast wie eine Muttersprache</li>
-		    </ul>
-		  </div>
-		  <p>So weißt du bei Vitamina E jederzeit, wo du stehst – und wohin deine Reise mit dem Spanischen geht.</p>
-        </div>
-        <div class="courses-grid">
-        <!-- Course 1 --------------------------------------------------------------------------------------------------------------->
-        <div class="main-container">
-            <!-- Border Box Container -->
-            <div class="border-box">
-            <!-- Headline -->
-            <h1 class="headline">
-                Standardkurse
-            </h1>
-            <!-- Two-Column Grid -->
-            <div class="courses-grid">
-                <!-- First Column: 60 Minutes -->
-                <div class="course-card">
-                <!-- Header Section -->
-                <header class="minutes-banner minutes-60">
-                    <!--img alt="60 Minuten" class="minutes-image" src="blue_min_t.png"/-->
-                    <span class="course-minutes">
-                    60 Minuten
-                    </span>
-                </header>
-                <!-- Pricing Section -->
-                <section class="pricing-section">
-                    <!-- Hourly Pricing Banner -->
-                    <div class="pricing-banner">
-                    <!--img alt="price" class="pricing-image" src="arrow_orange2.png"/-->
-                    <span class="pricing-text">
-                        54 CHF pro Lektion
-                    </span>
-                    </div>
-                    <!-- Package Pricing Banner -->
-                    <div class="package-banner">
-                    <!-- img alt="price" class="package-image" src="price_group_t.png"/-->
-                    <span class="package-price-text">
-                        10er-Paket: 510 CHF<br>
-		        (Spare 30 CHF)
-                    </span>
-                    </div>
-                </section>
-                <!-- Features Section - Now as unified block -->
-                <section class="features-section">
-                    <!-- Feature 1: Dynamic Interaction -->
-                    <div class="feature-item">
-                    <img class="feature-image icon-speech" src="chat_bubble2.png"/>
-                    <div class="feature-text">
-                        Dynamische Interaktion mit praxisnaher Grammatik
-                    </div>
-                    </div>
-                    <!-- Feature 2: Small Groups -->
-                    <div class="feature-item">
-                    <img alt="👥" class="feature-image icon-group" src="group3.png"/>
-                    <div class="feature-text">
-                        Kleine Gruppen für viel Raum zum Sprechen
-                    </div>
-                    </div>
-                    <!-- Feature 3: Supplementary Materials -->
-                    <div class="feature-item">
-                    <img alt="📚" class="feature-image icon-book" src="books2.png"/>
-                    <div class="feature-text">
-                        Ergänzende Materialien (Kursbuch separat)
-                    </div>
-                    </div>
-                    <!-- Feature 4: Individual Support -->
-                    <div class="feature-item">
-                    <img alt="🎯" class="feature-image icon-person" src="individual_support_t.png"/>
-                    <div class="feature-text">
-                        Individuelle Betreuung und Beratung
-                    </div>
-                    </div>
-                    <!-- Feature 5: Room Inclusive -->
-                    <div class="feature-item">
-                    <img alt="🏢" class="feature-image icon-building" src="house_t.png"/>
-                    <div class="feature-text">
-                        Raum inklusive
-                    </div>
-                    </div>
-                    <!-- Feature 6: Lots of Fun -->
-                    <div class="feature-item">
-                    <img alt="🎉" class="feature-image icon-func" src="party_t.png"/>
-                    <div class="feature-text">
-                        Jede Menge Spaß und Motivation!
-                    </div>
-                    </div>
-                </section>
-                </div>
-                <!-- Second Column: 90 Minutes -->
-                <div class="course-card">
-                <!-- Header Section -->
-                <header class="minutes-banner minutes-90">
-                    <!--img alt="90 Minuten" class="minutes-image" src="red_min_t.png"/-->
-                    <span class="course-minutes">
-                    90 Minuten
-                    </span>
-                </header>
-                <!-- Pricing Section -->
-                <section class="pricing-section">
-                    <!-- Hourly Pricing Banner -->
-                    <div class="pricing-banner">
-                    <!--img alt="price" class="pricing-image" src="arrow_orange2.png"/-->
-                    <span class="pricing-text">
-                        74 CHF pro Lektion
-                    </span>
-                    </div>
-                    <!-- Package Pricing Banner -->
-                    <div class="package-banner">
-                    <!--img alt="price" class="package-image" src="price_group_t.png"/-->
-                    <span class="package-price-text">
-                        10er-Paket: 700 CHF<br>
-			(Spare 40 CHF)
-                    </span>
-                    </div>
-                </section>
-                <!-- Features Section - Now as unified block -->
-                <section class="features-section">
-                    <!-- Feature 1: Dynamic Interaction -->
-                    <div class="feature-item">
-                    <img class="feature-image icon-speech" src="woman_talk_t.png"/>
-                    <div class="feature-text">
-					      Mehr Zeit zum Sprechen und aktiven Anwenden.
-                    </div>
-                    </div>
-                    <!-- Feature 2: Small Groups -->
-                    <div class="feature-item">
-                    <img alt="👥" class="feature-image icon-group" src="chat_bubble3_t.png"/>
-                    <div class="feature-text">
-                        Natürlichere und vertiefte Gespräche.
-                    </div>
-                    </div>
-                    <!-- Feature 3: Supplementary Materials -->
-                    <div class="feature-item">
-                    <img alt="✅" class="feature-image icon-book" src="green_check_t.png"/>
-                    <div class="feature-text">
-                        Mehr individuelle Korrekturen und persönliches Feedback.
-                    </div>
-                    </div>
-                    <!-- Feature 4: Individual Support -->
-                    <div class="feature-item">
-                    <img alt="💡" class="feature-image icon-person" src="bulb_t.png"/>
-                    <div class="feature-text">
-                        Raum für Fragen, Wiederholung und gezielte Vertiefung Zeit zum Ankommen, Üben und Festigen.
-                    </div>
-                    </div>
-                    <!-- Feature 5: Room Inclusive -->
-                    <div class="feature-item">
-                    <img alt="🏢" class="feature-image icon-building" src="house_t.png"/>
-                    <div class="feature-text">
-                        Raum inklusive 
-                    </div>
-                    </div>
-                </section>
-                </div>
-            </div>
-            <!-- Description Section -->
-            <div class="description-section">
-                <h2 class="description-title">
-                Was dich erwartet:
-                </h2>
-                <p class="description-text">
-                Träumst du davon, Spanisch flüssig und sicher zu sprechen? Die Standardkurse begleiten dich Schritt für Schritt – praxisnah, abwechslungsreich und mit spürbaren Fortschritten.
-                </p>
-                <!-- Benefits List - Inline Style -->
-                <ul class="benefits-list">
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    📋
-                    </span>
-                    Aktiv &amp; interaktiv: Übungen, die Spaß machen
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    🎯
-                    </span>
-                   Jedes Niveau ist in drei Module (z. B. A1.1, A1.2, A1.3) unterteilt.
-Ein Modul umfasst 10 Lektionen und kann flexibel im 60- oder 90-Minuten-Format gebucht werden.
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    ⚡
-                    </span>
-                    Flexibel &amp; auf dein Tempo abgestimmt
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    📍
-                    </span>
-                    Alle Fertigkeiten trainieren – Hören, Sprechen, Lesen, Schreiben
-                </li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <!-- Course 2 --------------------------------------------------------------------------------------------------------------->
-        <div class="main-container">
-            <!-- Border Box Container -->
-            <div class="border-box">
-            <!-- Headline -->
-            <h1 class="headline">
-                Konversationskurse
-            </h1>
-            <!-- Two-Column Grid -->
-            <div class="courses-grid">
-                <!-- First Column: 60 Minutes -->
-                <div class="course-card">
-                <!-- Header Section -->
-                <header class="minutes-banner minutes-60">
-                    <!--img alt="60 Minuten" class="minutes-image" src="blue_min_t.png"/-->
-                    <span class="course-minutes">
-                    60 Minuten
-                    </span>
-                </header>
-                <!-- Pricing Section -->
-                <section class="pricing-section">
-                    <!-- Hourly Pricing Banner -->
-                    <div class="pricing-banner">
-                    <!--img alt="price" class="pricing-image" src="arrow_orange2.png"/-->
-                    <span class="pricing-text">
-                        50 CHF pro Lektion
-                    </span>
-                    </div>
-                    <!-- Package Pricing Banner -->
-                    <div class="package-banner">
-                    <!--img alt="price" class="package-image" src="price_group_t.png"/-->
-                    <span class="package-price-text">
-                        10er-Paket: 475 CHF<br>
-			(Spare 25 CHF)
-                    </span>
-                    </div>
-                </section>
-                <!-- Features Section - Now as unified block -->
-                <section class="features-section">
-                    <!-- Feature 1: Dynamic Interaction -->
-                    <div class="feature-item">
-                    <img class="feature-image icon-speech" src="chat_bubble2.png"/>
-                    <div class="feature-text">
-                        Praxisnah &amp; interaktiv
-                    </div>
-                    </div>
-                    <!-- Feature 2: Small Groups -->
-                    <div class="feature-item">
-                    <img alt="👥" class="feature-image icon-group" src="group3.png"/>
-                    <div class="feature-text">
-                        Kleine Gruppen 
-                    </div>
-                    </div>
-                    <!-- Feature 3: Supplementary Materials -->
-                    <div class="feature-item">
-                    <img alt="📚" class="feature-image icon-book" src="books2.png"/>
-                    <div class="feature-text">
-                        Ergänzende Materialien (Kursbuch separat)
-                    </div>
-                    </div>
-                    <!-- Feature 4: Individual Support -->
-                    <div class="feature-item">
-                    <img alt="🎯" class="feature-image icon-person" src="individual_support_t.png"/>
-                    <div class="feature-text">
-                       Fokus auf Sprechen &amp; Zuhören
-                    </div>
-                    </div>
-                    <!-- Feature 5: Room Inclusive -->
-                    <div class="feature-item">
-                    <img alt="🏢" class="feature-image icon-building" src="house_t.png"/>
-                    <div class="feature-text">
-                        Raum inklusive
-                    </div>
-                    </div>
-                    <!-- Feature 6: Lots of Fun -->
-                    <div class="feature-item">
-                    <img alt="🎉" class="feature-image icon-func" src="party_t.png"/>
-                    <div class="feature-text">
-                        Jede Menge Spaß!
-                    </div>
-                    </div>
-                </section>
-                </div>
-                <!-- Second Column: 90 Minutes -->
-                <div class="course-card">
-                <!-- Header Section -->
-                <header class="minutes-banner minutes-90">
-                    <!--img alt="90 Minuten" class="minutes-image" src="red_min_t.png"/-->
-                    <span class="course-minutes">
-                    90 Minuten
-                    </span>
-                </header>
-                <!-- Pricing Section -->
-                <section class="pricing-section">
-                    <!-- Hourly Pricing Banner -->
-                    <div class="pricing-banner">
-                    <!--img alt="price" class="pricing-image" src="arrow_orange2.png"/-->
-                    <span class="pricing-text">
-                        70 CHF pro Lektion
-                    </span>
-                    </div>
-                    <!-- Package Pricing Banner -->
-                    <div class="package-banner">
-                    <!--img alt="price" class="package-image" src="price_group_t.png"/-->
-                    <span class="package-price-text">
-                        10er-Paket: 665 CHF<br>
-			(Spare 35 CHF)
-                    </span>
-                    </div>
-                </section>
-                <!-- Features Section - Now as unified block -->
-                <section class="features-section">
-
-		  
-  
-                    <!-- Feature 1: Dynamic Interaction -->
-                    <div class="feature-item">
-                    <img class="feature-image icon-speech" src="woman_talk_t.png"/>
-                    <div class="feature-text">
-                        Intensiver &amp; vertiefend
-                    </div>
-                    </div>
-                    <!-- Feature 2: Small Groups -->
-                    <div class="feature-item">
-                    <img alt="👥" class="feature-image icon-group" src="conversations_t.png"/>
-                    <div class="feature-text">
-                        Mehr Zeit für individuelle Gespräche
-                    </div>
-                    </div>
-                    <!-- Feature 3: Supplementary Materials -->
-                    <div class="feature-item">
-                    <img alt="📚" class="feature-image icon-book" src="individual_support_t.png"/>
-                    <div class="feature-text">
-                        Feedback &amp; gezielte Übungen
-                    </div>
-                    </div>
-                    <!-- Feature 4: Individual Support -->
-                    <div class="feature-item">
-                    <img alt="🎯" class="feature-image icon-person" src="individual_support_2_t.png"/>
-                    <div class="feature-text">
-                        Raum für Austausch &amp; Übung
-                    </div>
-                    </div>
-                    <!-- Feature 5: Room Inclusive -->
-                    <div class="feature-item">
-                    <img alt="🏢" class="feature-image icon-building" src="house_t.png"/>
-                    <div class="feature-text">
-                        Raum inklusive
-                    </div>
-                    </div>
-                </section>
-                </div>
-            </div>
-            <!-- Description Section -->
-            <div class="description-section">
-                <h2 class="description-title">
-                Konversationskurse
-                </h2>
-                <p class="description-text">
-               
-Ideal ab A2/B1, wenn du bereits Grundkenntnisse hast und mehr Sicherheit gewinnen möchtest. Jede Stunde bringt dich weiter: neue Worte, neue Begegnungen und mehr Selbstvertrauen beim Sprechen.
-                </p>
-                <!-- Benefits List - Inline Style -->
-                <ul class="benefits-list">
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    📋
-                    </span>
-                    Praxisnah &amp; interaktiv – Sprechen, diskutieren und üben in realen Kommunikationssituationen.
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    🎯
-                    </span>
-                    Klare Lernziele – Gezielte Übungen zur Verbesserung der mündlichen Ausdrucksfähigkeit.
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    ⚡
-                    </span>
-                    Flexible Methodik – Anpassbar an dein Lerntempo und deine Interessen.
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    📍
-                    </span>
-                    Kommunikation &amp; Hörverständnis – Fokus auf Sprechen und Zuhören, Grammatik nach GER-Niveau unterstützt den Ausdruck
-                </li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <!-- Course 3 --------------------------------------------------------------------------------------------------------------->
-        <div class="main-container">
-            <!-- Border Box Container -->
-            <div class="border-box">
-            <!-- Headline -->
-            <h1 class="headline">
-                Privatkurse
-            </h1>
-            <!-- Two-Column Grid -->
-            <div class="courses-grid">
-                <!-- First Column: 60 Minutes -->
-                <div class="course-card">
-                <!-- Header Section -->
-                <header class="minutes-banner minutes-60">
-                    <!--img alt="60 Minuten" class="minutes-image" src="blue_min_t.png"/-->
-                    <span class="course-minutes">
-                    60 Minuten
-                    </span>
-                </header>
-                <!-- Pricing Section -->
-                <section class="pricing-section">
-                    <!-- Hourly Pricing Banner -->
-                    <div class="pricing-banner">
-                    <!--img alt="price" class="pricing-image" src="arrow_orange2.png"/-->
-                    <span class="pricing-text">
-                       90 CHF pro Lektion
-                    </span>
-                    </div>
-                    <!-- Package Pricing Banner -->
-                    <div class="package-banner">
-                    <!--img alt="price" class="package-image" src="price_group_t.png"/-->
-                    <span class="package-price-text">
-                        10er-Paket: 850 CHF<br>
-            		(Spare 50 CHF)
-                    </span>
-                    </div>
-                </section>
-                <!-- Features Section - Now as unified block -->
-                <section class="features-section">
-                    <!-- Feature 1: Dynamic Interaction -->
-                    <div class="feature-item">
-                    <img class="feature-image icon-speech" src="chat_bubble2.png"/>
-                    <div class="feature-text">
-                        Persönliche Betreuung &amp; praxisnah
-                    </div>
-                    </div>
-                    <!-- Feature 2: Small Groups -->
-                    <div class="feature-item">
-                    <img alt="👥" class="feature-image icon-group" src="group3.png"/>
-                    <div class="feature-text">
-                        Einzelunterricht nach deinem Tempo
-                    </div>
-                    </div>
-                    <!-- Feature 3: Supplementary Materials -->
-                    <div class="feature-item">
-                    <img alt="📚" class="feature-image icon-book" src="books2.png"/>
-                    <div class="feature-text">
-                        Ergänzende Materialien (Kursbuch separat)
-                    </div>
-                    </div>
-                    <!-- Feature 4: Individual Support -->
-                    <div class="feature-item">
-                    <img alt="🎯" class="feature-image icon-person" src="individual_support_t.png"/>
-                    <div class="feature-text">
-                        Individuelle Betreuung
-                    </div>
-                    </div>
-                    <!-- Feature 5: Room Inclusive -->
-                    <div class="feature-item">
-                    <img alt="🏢" class="feature-image icon-building" src="house_t.png"/>
-                    <div class="feature-text">
-                        Raum inklusive
-                    </div>
-                    </div>
-                    <!-- Feature 6: Lots of Fun -->
-                    <div class="feature-item">
-                    <img alt="🎉" class="feature-image icon-func" src="party_t.png"/>
-                    <div class="feature-text">
-                        Jede Menge Spaß und Motivation!
-                    </div>
-                    </div>
-                </section>
-                </div>
-                <!-- Second Column: 90 Minutes -->
-                <div class="course-card">
-                <!-- Header Section -->
-                <header class="minutes-banner minutes-90">
-                    <!--img alt="90 Minuten" class="minutes-image" src="red_min_t.png"/-->
-                    <span class="course-minutes">
-                    90 Minuten
-                    </span>
-                </header>
-                <!-- Pricing Section -->
-                <section class="pricing-section">
-                    <!-- Hourly Pricing Banner -->
-                    <div class="pricing-banner">
-                    <!--img alt="price" class="pricing-image" src="arrow_orange2.png"/-->
-                    <span class="pricing-text">
-                        120 CHF pro Lektion
-                    </span>
-                    </div>
-                    <!-- Package Pricing Banner -->
-                    <div class="package-banner">
-                    <!--img alt="price" class="package-image" src="price_group_t.png"/-->
-                    <span class="package-price-text">
-                        10er-Paket: 1150 CHF<br>
-                        (Spare 50 CHF)
-                    </span>
-                    </div>
-                </section>
-                <!-- Features Section - Now as unified block -->
-                <section class="features-section">
-                    <!-- Feature 1: Dynamic Interaction -->
-                    <div class="feature-item">
-                    <img class="feature-image icon-speech" src="woman_talk_t.png"/>
-                    <div class="feature-text">
-					      Mehr Zeit zum Üben &amp; Vertiefen 
-                    </div>
-                    </div>
-                    <!-- Feature 2: Small Groups -->
-                    <div class="feature-item">
-                    <img alt="👥" class="feature-image icon-group" src="conversations_t.png"/>
-                    <div class="feature-text">
-					      Vielfältige und bereichernde Gespräche – Themen ausführlich erkunden und diskutieren
-                    </div>
-                    </div>
-                    <!-- Feature 3: Supplementary Materials -->
-                    <div class="feature-item">
-                    <img alt="📚" class="feature-image icon-book" src="individual_support_t.png"/>
-                    <div class="feature-text">
-					      Individuelles Feedback und freier Austausch – gezielte Hinweise und Raum für eigene Ideen
-                    </div>
-                    </div>
-                    <!-- Feature 4: Individual Support -->
-                    <div class="feature-item">
-                    <img alt="🎯" class="feature-image icon-person" src="individual_support_2_t.png"/>
-                    <div class="feature-text">
-					      Flexibles Übungsumfeld – entspannt üben, entdecken und selbstbewusst ausdrücken
-                    </div>
-                    </div>
-                    <!-- Feature 5: Room Inclusive -->
-                    <div class="feature-item">
-                    <img alt="🏢" class="feature-image icon-building" src="house_t.png"/>
-                    <div class="feature-text">
-                        Raum inklusive
-                    </div>
-                    </div>
-                </section>
-                </div>
-            </div>
-            <!-- Description Section -->
-            <div class="description-section">
-                <h2 class="description-title">
-                Ganz auf dich zugeschnitten
-                </h2>
-                <p class="description-text">
-                Dein Weg mit Privatkursen
-Tauche ein in die spanische Sprache – Stunde für Stunde wachsen deine Worte, deine Sicherheit und deine Freude. Ganz individuell, so wie du es brauchst, vor Ort oder online.
-
-                </p>
-                <!-- Benefits List - Inline Style -->
-                <ul class="benefits-list">
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    📋
-                    </span>
-                    Individuell &amp; persönlich – Unterricht, der auf Ihre Bedürfnisse und Ziele zugeschnitten ist
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    🎯
-                    </span>
-                    Gezielte Lernziele – Fokus auf genau die Themen, die für dich relevant sind
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    ⚡
-                    </span>
-                    Maximale Flexibilität – Anpassung an dein Lerntempo, Terminplanung und Lernstil
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    📍
-                    </span>
-                    Aktive Kommunikation &amp; Praxis – Intensives Sprechen, Hören und Schreiben 
-                </li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <!-- Course 4 --------------------------------------------------------------------------------------------------------------->
-        <div class="main-container">
-            <!-- Border Box Container -->
-            <div class="border-box">
-            <!-- Headline -->
-            <h1 class="headline">
-                Reisekurse
-            </h1>
-            <!-- Two-Column Grid -->
-            <div class="courses-grid">
-                <!-- First Column: 60 Minutes -->
-                <div class="course-card">
-                <!-- Header Section -->
-                <header class="minutes-banner minutes-60">
-                    <!--img alt="60 Minuten" class="minutes-image" src="blue_min_t.png"/-->
-                    <span class="course-minutes">
-                    60 Minuten
-                    </span>
-                </header>
-                <!-- Pricing Section -->
-                <section class="pricing-section">
-                    <!-- Hourly Pricing Banner -->
-                    <div class="pricing-banner">
-                    <!--img alt="price" class="pricing-image" src="arrow_orange2.png"/-->
-                    <span class="pricing-text">
-                        54 CHF pro Lektion
-                    </span>
-                    </div>
-                    <!-- Package Pricing Banner -->
-                    <div class="package-banner">
-                    <!--img alt="price" class="package-image" src="price_group_t.png"/-->
-                    <span class="package-price-text">
-                        10er-Paket: 510 CHF<br>
-            		(Spare 30 CHF)
-                    </span>
-                    </div>
-                </section>
-                <!-- Features Section - Now as unified block -->
-                <section class="features-section">
-                    <!-- Feature 1: Dynamic Interaction -->
-                    <div class="feature-item">
-                    <img class="feature-image icon-speech" src="chat_bubble2.png"/>
-                    <div class="feature-text">
-                        Dynamische Interaktion &amp; praxisnahe Grammatik
-                    </div>
-                    </div>
-                    <!-- Feature 2: Small Groups -->
-                    <div class="feature-item">
-                    <img alt="👥" class="feature-image icon-group" src="group3.png"/>
-                    <div class="feature-text">
-                        Kleine Gruppen für volle Aufmerksamkeit
-                    </div>
-                    </div>
-                    <!-- Feature 3: Supplementary Materials -->
-                    <div class="feature-item">
-                    <img alt="📚" class="feature-image icon-book" src="books2.png"/>
-                    <div class="feature-text">
-                        Ergänzende Materialien (Kursbuch separat)
-                    </div>
-                    </div>
-                    <!-- Feature 4: Individual Support -->
-                    <div class="feature-item">
-                    <img alt="🎯" class="feature-image icon-person" src="individual_support_t.png"/>
-                    <div class="feature-text">
-                        Individuelle Betreuung
-                    </div>
-                    </div>
-                    <!-- Feature 5: Room Inclusive -->
-                    <div class="feature-item">
-                    <img alt="🏢" class="feature-image icon-building" src="house_t.png"/>
-                    <div class="feature-text">
-                        Raum inklusive
-                    </div>
-                    </div>
-                    <!-- Feature 6: Lots of Fun -->
-                    <div class="feature-item">
-                    <img alt="🎉" class="feature-image icon-func" src="party_t.png"/>
-                    <div class="feature-text">
-                        Jede Menge Spaß!
-                    </div>
-                    </div>
-                </section>
-                </div>
-                <!-- Second Column: 90 Minutes -->
-                <div class="course-card">
-                <!-- Header Section -->
-                <header class="minutes-banner minutes-90">
-                    <!--img alt="90 Minuten" class="minutes-image" src="red_min_t.png"/-->
-                    <span class="course-minutes">
-                    90 Minuten
-                    </span>
-                </header>
-                <!-- Pricing Section -->
-                <section class="pricing-section">
-                    <!-- Hourly Pricing Banner -->
-                    <div class="pricing-banner">
-                    <!--img alt="price" class="pricing-image" src="arrow_orange2.png"/-->
-                    <span class="pricing-text">
-                        74 CHF pro Lektion
-                    </span>
-                    </div>
-                    <!-- Package Pricing Banner -->
-                    <div class="package-banner">
-                    <!--img alt="price" class="package-image" src="price_group_t.png"/-->
-                    <span class="package-price-text">
-                        10er-Paket: 700 CHF<br>
-            		(Spare 40 CHF)
-                    </span>
-                    </div>
-                </section>
-                <!-- Features Section - Now as unified block -->
-                <section class="features-section">
-                    <!-- Feature 1: Dynamic Interaction -->
-                    <div class="feature-item">
-                    <img class="feature-image icon-speech" src="chat_bubble2.png"/>
-                    <div class="feature-text">
-                        Mehr Zeit zum Üben &amp; Vertiefen
-                    </div>
-                    </div>
-                    <!-- Feature 2: Small Groups -->
-                    <div class="feature-item">
-                    <img alt="👥" class="feature-image icon-group" src="woman_talk_t.png"/>
-                    <div class="feature-text">
-					      Vertiefung der Sprachkenntnisse – mehr Zeit, um Vokabular und Redewendungen zu festigen.
-                    </div>
-                    </div>
-                    <!-- Feature 3: Supplementary Materials -->
-                    <div class="feature-item">
-                    <img alt="📚" class="feature-image icon-book" src="two_people_talk_t.png"/>
-                    <div class="feature-text">
-					      Ausführliche, praxisnahe Gespräche – intensivere Rollenspiele und reale Szenarien.
-                    </div>
-                    </div>
-                    <!-- Feature 4: Individual Support -->
-                    <div class="feature-item">
-                    <img alt="🎯" class="feature-image icon-person" src="individual_support_t.png"/>
-                    <div class="feature-text">
-					      Individuelles Feedback und freier Austausch – persönliche Tipps für typische Reisesituationen.
-                    </div>
-                    </div>
-                    <!-- Feature 6: Lots of Fun -->
-                    <div class="feature-item">
-                    <img alt="🎉" class="feature-image icon-func" src="individual_support_2_t.png"/>
-                    <div class="feature-text">
-                        Selbstbewusst in Alltagssituationen kommunizieren
-                    </div>
-                    </div>
-	    
-                    <!-- Feature 5: Room Inclusive -->
-                    <div class="feature-item">
-                    <img alt="🏢" class="feature-image icon-building" src="house_t.png"/>
-                    <div class="feature-text">
-                        Raum inklusive.
-                    </div>
-                    </div>
-                </section>
-                </div>
-            </div>
-            <!-- Description Section -->
-            <div class="description-section">
-                <h2 class="description-title">
-                Praxisnah &amp; interaktiv
-                </h2>
-                <p class="description-text">
-                Bereit für deine Reise?
-Lerne praxisnah Spanisch für Hotels, Restaurants, Transport und Freizeitaktivitäten – Schritt für Schritt wirst du sicherer, flüssiger und genießt deine Reise noch mehr.
-                </p>
-                <!-- Benefits List - Inline Style -->
-                <ul class="benefits-list">
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    📋
-                    </span>
-                    Praktisch &amp; interaktiv – Lerne , dich in alltäglichen Reisesituationen sicher zu verständigen.
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    🎯
-                    </span>
-                    Klare Lernziele – Fokus auf Vokabular, Redewendungen und Situationen, die für Reisen relevant sind.
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    ⚡
-                    </span>
-                    Flexible Methodik – Anpassbar an dein Lerntempo und deine Reisepläne.
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    📍
-                    </span>
-                    Sprechen &amp; Hören im Alltag – Übungen für Kommunikation im Hotel, Restaurant, Transport und Freizeit.
-                </li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <!-- Course 5 --------------------------------------------------------------------------------------------------------------->
-        <div class="main-container">
-            <!-- Border Box Container -->
-            <div class="border-box">
-            <!-- Headline -->
-            <h1 class="headline">
-                DELE Prüfungs-vorbereitung
-            </h1>
-            <!-- Description Section Only (No Pricing Grid) -->
-            <div class="description-section">
-                <h2 class="description-title">
-                Offizielles internationales Spanisch-Zertifikat
-                </h2>
-                <p class="description-text">
-                
-Erreiche dein gewünschtes Spanischniveau und sichere dir das offiziell anerkannte DELE-Zertifikat – von A2 bis C1 – Schritt für Schritt, klar, effizient und motivierend. Preis nach Absprache. 
-                </p>
-                <!-- Benefits List - Inline Style -->
-                <ul class="benefits-list">
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    📚
-                    </span>
-                    Praxisnahe Übungen nach offiziellem Prüfungsformat
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    🎯
-                    </span>
-                    Gezieltes Training aller Prüfungsfähigkeiten
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    🧠
-                    </span>
-                    Klare Strategien für jede Prüfungsaufgabe
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    🚀
-                    </span>
-                    Schneller Fortschritt mit konkreten Zielen
-                </li>
-                </ul>
-                <p class="description-text">
-                Dein Weg zum DELE-Zertifikat – klar, motivierend und erfolgreich!
-                </p>
-            </div>
-            </div>
-        </div>
-        <!-- Course 6 --------------------------------------------------------------------------------------------------------------->
-        <div class="main-container">
-            <!-- Border Box Container -->
-            <div class="border-box">
-            <!-- Headline -->
-            <h1 class="headline">
-                Firmenkurse
-            </h1>
-            <!-- Description Section Only (No Pricing Grid) -->
-            <div class="description-section">
-                <h2 class="description-title">
-                Spanisch für den Berufsalltag
-                </h2>
-                <p class="description-text">
-                Schritt für Schritt wachsen Kompetenz, Selbstvertrauen und Sicherheit im Spanisch – damit Ihr Team souverän kommuniziert und erfolgreich agiert.
-					Praxisnah, effizient und motivierend – ideal für Geschäftsreisen, Meetings und Kund:innenkontakte. Preis nach Absprache. 
-                </p>
-                <!-- Benefits List - Inline Style -->
-                <ul class="benefits-list">
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    🎯
-                    </span>
-                    Individuell zugeschnitten: Inhalte und Themen werden genau auf Ihr Team und die Ziele Ihres Unternehmens abgestimmt
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    💬
-                    </span>
-                    Praxisorientierte Kommunikation: Wir üben relevante Themen, bereiten Meetings vor und trainieren den sicheren Einsatz der Sprache im echten Berufsleben
-                </li>
-                <li class="benefit-item">
-                    <span class="benefit-icon">
-                    🏢
-                    </span>
-                    Erfahrung mit Top-Unternehmen: Mitarbeitende von SwissRE, UBS und Julius Bär habe ich bereits begleitet
-                </li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        <!------------------------------------------------------------------------------------------------------------------>
-        </div>
+    <div class="loc-card">
+      <h3>Online</h3>
+      <address>Flexibel von überall lernen –<br>mit der gleichen Qualität<br>und Energie wie vor Ort.</address>
+      <a href="#kontakt" class="loc-link">Jetzt anmelden →</a>
     </div>
-    </section>
-    
-    <!-- Trial Lesson Button Section -->
-    <section class="section-trial">
-        <div class="container">
-            <div class="trial-button-container">
-                <h3>Gönn dir deine erste Stunde voller Energie – bei VITAMINA E!</h3>
-                <a href="#contact" class="trial-button" onclick="fillTrialForm(event)">
-                    Probelektion buchen
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Testimonios Section -->
-    <div class="container">
-        <div class="content-box">
-        <h2>
-            Testimonios
-        </h2>
-        <div class="testimonial-box">
-            <p>
-            Seit über vier Jahren besuche ich nun schon den Unterricht von Gloria. Für mich ist ihre Großzügigkeit, Geduld und ihr breites Know-how in allen Bereich eine große Bereicherung und macht den Unterricht erst so richtig toll. Wobei die Klasse, die ich besuche, kein klassischer Schulunterricht darstellt, sondern viel mehr ein gemütliches Treffen ist, worauf ich mich mit jedem neuen Start einer Woche freue. Bei Gloria geht es nicht nur darum, die Sprache zu lernen, sondern viel mehr in die Kulturen der spanischsprechenden Länder einzutauchen und deren individuellen Begebenheiten kennenzulernen. Mir gefällt der Mix aus Erzählen von Alltäglichem, Lesen von Büchern, Arbeiten in Mini-Gruppen oder Spielen besonders gut. Ich kann Gloria als sehr warmherzige, liebe und geduldige Person als Spanischlehrerin nur weiterempfehlen.
-            </p>
-            <p class="testimonial-author">
-            Julia, 31, Communication Manager
-            </p>
-        </div>
-        <div class="testimonial-box">
-            <p>
-            Gloria ist fröhlich und unkompliziert. Mit ihrem mexikanischen Temperament ist sie Lehrerin aus Leidenschaft. Im Unterricht lernt man bei ihr fast automatisch: Sie schafft es, aus jeder Interaktion einen Lerneffekt herauszuholen. Feinfühlig geht sie auf den Einzelnen ein und schafft es, jeden dort abzuholen wo er oder sie lerntechnisch gerade steht. Der Unterricht macht sehr viel Spaß und hat mich großartig auf meine Reise durch Südamerika vorbereitet.
-            </p>
-            <p class="testimonial-author">
-              Judith, 40, Architektin
-	    	</p>
-	</div>
+  </div>
+</section>
 
-        <div class="testimonial-box">
-          <p>
-	    	Gloria ist seit über 6 Jahren meine Spanischlehrerin und einfach großartig. Der Unterricht ist super familiär, entspannt und gleichzeitig sehr effektiv. Sie ist mega cool und fühlt sich eher wie eine Freundin als eine klassische Lehrerin an. Dank ihr macht Spanisch richtig Spaß!
-		  </p>
-		  <p class="testimonial-author">
-	    	Sara
-		  </p>
-	</div>
-
-        <div class="testimonial-box">
-          <p>
-	    	Seit vielen Jahren besuche ich den Spanischkurs bei Gloria zusammen mit 3 weiteren Teilnehmern. Ich freue mich jede Woche auf den Kurs. Gloria hat viel Geduld, obwohl meine Leistungen meist nicht so toll sind. Der Unterricht ist immer sehr gut vorbereitet, deshalb interessant und abwechslungsreich (Grammatik, aktuelle Themen, Lehrmittel, Arbeitsblätter, Spiele ...)
-		  </p>
-		  <p class="testimonial-author">
-	    	Rena 
-		  </p>
-	</div>
-
-        <div class="testimonial-box">
-          <p>
-	    	Seit mehr als 5 Jahren besuche ich die Spanisch-kurse bei Gloria. Die Lektionen machen mir Spaß, sie sind immer interessant und abwechslungsreich. Gloria ist immer sehr gut und vielseitig vorbereitet für Grammatik, Konversation und auch aktuelle Themen.
-		  </p>
-		  <p class="testimonial-author">
-	    	Werner
-		  </p>
-	</div>
-	
-        <div class="testimonial-box">
-            <p>
-            Ich habe seit 5 Jahren Spanischunterricht bei Gloria. Ich hatte keine Vorkenntnisse und mit zwei Stunden pro Woche bin ich jetzt auf dem Niveau B1/B2. 
-Die zwei Stunden jede Woche sind für mich eher eine Entspannung als Arbeit, da die Atmosphäre sehr entspannt, humorvoll und freundlich ist.
-Gloria hat eine wunderschöne Art zu unterrichten - sie macht eine Mischung aus Grammatik und viel reden, lesen und den alltäglichen Wortschatz lernen. Sie bringt uns oft kleine Bücher zum Lesen, oder andere interessante Artikel. 
-Ich bin oft erstaunt über das Niveau, das ich erreicht habe, da ich außerhalb der zwei Stunden pro Woche nicht viel mehr mache.
-            </p>
-            <p class="testimonial-author">
-            Tamara, 37, Verkaufsdirektorin
-            </p>
-        </div>
-        </div>
+<!-- ── CONTACT ── -->
+<section class="section section-alt" id="kontakt" data-screen-label="Kontakt">
+  <div class="contact-grid">
+    <div data-reveal>
+      <p class="lbl">Kontakt</p>
+      <h2 class="h2">Fragen? Kurs anfragen?</h2>
+      <p class="lead">Kontaktiere mich gerne – ich melde mich so schnell wie möglich bei dir!</p>
+      <a href="mailto:info@vitaminae.ch" class="contact-detail email">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        info@vitaminae.ch
+      </a>
+      <a href="#" data-wa-link class="contact-detail wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.82L.046 23.954 6.3 22.49A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.372l-.357-.213-3.7.97.988-3.607-.233-.371A9.818 9.818 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818 5.424 0 9.818 4.395 9.818 9.818 0 5.424-4.394 9.818-9.818 9.818z"/></svg>
+        <span data-wa-text>WhatsApp</span>
+      </a>
     </div>
-    <!-- Contact Section -->
-    <section class="section-contact" id="contact">
-        <div class="floating-shapes">
-        <div class="floating-shape decorative-shape shape-petal bg-coral" style="width: 100px; height: 100px;">
-        </div>
-        <div class="floating-shape decorative-shape shape-flower bg-magenta" style="width: 80px; height: 80px;">
-        </div>
-        <div class="floating-shape decorative-shape shape-circle bg-yellow" style="width: 90px; height: 90px;">
-        </div>
-        </div>
-        <div class="container">
-        <div class="contact-content">
-            <h2>
-            Kontakt
-            </h2>
-            <b>Haben Sie Fragen oder möchten Sie sich für einen Kurs anmelden? Kontaktieren Sie uns gerne!</b>
+    <form class="cform" action="https://api.web3forms.com/submit" method="POST" data-reveal>
+      <input type="hidden" name="access_key" value="90e3b506-1d6e-4e8b-8969-061331d0bf25">
+      <input type="hidden" name="subject" value="Vitamina E web contact form">
+      <div class="fg"><label>Name</label><input type="text" name="name" placeholder="Ihr Name" required></div>
+      <div class="fg"><label>E-Mail</label><input type="email" name="email" placeholder="ihre@email.ch" required></div>
+      <div class="fg"><label>Kurs / Frage</label><textarea name="message" placeholder="Ich interessiere mich für …" required></textarea></div>
+      <button type="submit" class="btn-submit">Nachricht senden</button>
+    </form>
+  </div>
+</section>
 
-    <div class="contact-form">
-      <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="90e3b506-1d6e-4e8b-8969-061331d0bf25"/>
-        <input type="hidden" name="subject" value="Vitamina E web contact form"/>
-        <input type="text" name="name" placeholder="Name" required/>
-        <input type="email" name="email" placeholder="Email" required/>
-        <textarea name="message" placeholder="Message" required></textarea>
-        <button type="submit">Senden</button>
-      </form>
+<!-- ── FOOTER FLORAL ── -->
+<div class="floral alt"><img src="uploads/other_images-1780666716206.png" alt=""></div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p><strong>© 2025 Vitamina E</strong> – Spanischkurse in Zürich. Alle Rechte vorbehalten.</p>
+</footer>
+
+<!-- ── TWEAKS PANEL ── -->
+<div id="tweaks" class="hidden">
+  <div class="twk-title">Design-Variante</div>
+  <div class="twk-row">
+    <div class="twk-lbl">Stil</div>
+    <div class="twk-pills">
+      <button class="twk-pill on" data-style="boutique">Boutique</button>
+      <button class="twk-pill" data-style="vibrant">Vibrant</button>
     </div>
-	    
-        </div>
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-        <p>
-            © 2025 Vitamina E - Spanischkurse in Zürich. Alle Rechte vorbehalten.
-        </p>
-        <div class="footer-decoration">
-            <img class="banner-image"  src="footer_banner.png"/>
-        </div>
-        </div>
-    </footer>
-    </section>
-    
-    <script>
-        function fillTrialForm(event) {
-            event.preventDefault();
-            const contactForm = document.querySelector('.contact-form textarea[name="message"]');
-            if (contactForm) {
-                contactForm.value = "¡Hola!  Ich würde gerne eine Probestunde bei VITAMINA E buchen. Welche Termine sind verfügbar? Vielen Dank!";
-            }
-            // Scroll to contact section
-            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+  </div>
+  <div class="twk-row">
+    <div class="twk-lbl">Testimonials</div>
+    <div class="twk-pills">
+      <button class="twk-pill on" data-tmode="carousel">Karussell</button>
+      <button class="twk-pill" data-tmode="cards">Karten</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── WHATSAPP NUMBER (assembled at runtime, not present as plain text in the HTML source) ──
+const waParts = ['76','405','51','29'];
+const waIntl = '41' + waParts.join('');
+document.querySelectorAll('[data-wa-link]').forEach(a => {
+  a.href = 'https://wa.me/' + waIntl;
+  a.target = '_blank';
+  a.rel = 'noopener';
+});
+document.querySelectorAll('[data-wa-text]').forEach(el => {
+  el.textContent = '0' + waParts[0] + ' ' + waParts.slice(1).join(' ');
+});
+
+// ── TWEAKS VISIBILITY (host postMessage) ──
+const tweaksEl = document.getElementById('tweaks');
+window.addEventListener('message', e => {
+  if (e.data?.type === 'tweaks-toggle') tweaksEl.classList.toggle('hidden', !e.data.visible);
+});
+
+// ── STYLE TOGGLE ──
+const body = document.body;
+document.querySelectorAll('[data-style]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const s = btn.dataset.style;
+    body.className = s;
+    document.querySelectorAll('[data-style]').forEach(b => b.classList.toggle('on', b.dataset.style === s));
+    localStorage.setItem('ve_style', s);
+  });
+});
+const savedStyle = localStorage.getItem('ve_style');
+if (savedStyle) {
+  body.className = savedStyle;
+  document.querySelectorAll('[data-style]').forEach(b => b.classList.toggle('on', b.dataset.style === savedStyle));
+}
+
+// ── TESTIMONIALS CAROUSEL ──
+const track = document.getElementById('tTrack');
+const slides = [...track.querySelectorAll('.t-slide')];
+const dotsEl = document.getElementById('tDots');
+let cur = 0;
+
+slides.forEach((_, i) => {
+  const d = document.createElement('button');
+  d.className = 't-dot' + (i === 0 ? ' on' : '');
+  d.addEventListener('click', () => goTo(i));
+  dotsEl.appendChild(d);
+});
+
+function goTo(n) {
+  cur = ((n % slides.length) + slides.length) % slides.length;
+  track.style.transform = `translateX(-${cur * 100}%)`;
+  document.querySelectorAll('.t-dot').forEach((d, i) => d.classList.toggle('on', i === cur));
+}
+
+document.querySelector('.t-prev').addEventListener('click', () => goTo(cur - 1));
+document.querySelector('.t-next').addEventListener('click', () => goTo(cur + 1));
+
+let timer = setInterval(() => goTo(cur + 1), 5200);
+document.getElementById('tWrap').addEventListener('mouseenter', () => clearInterval(timer));
+document.getElementById('tWrap').addEventListener('mouseleave', () => { timer = setInterval(() => goTo(cur + 1), 5200); });
+
+// ── TESTIMONIALS CARDS TOGGLE ──
+const tCardsEl = document.getElementById('tCards');
+slides.forEach(s => {
+  const c = s.querySelector('.tcard').cloneNode(true);
+  tCardsEl.appendChild(c);
+});
+
+let tMode = 'carousel';
+document.querySelectorAll('[data-tmode]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    tMode = btn.dataset.tmode;
+    document.querySelectorAll('[data-tmode]').forEach(b => b.classList.toggle('on', b.dataset.tmode === tMode));
+    const isCards = tMode === 'cards';
+    document.getElementById('tWrap').style.display = isCards ? 'none' : '';
+    dotsEl.style.display = isCards ? 'none' : '';
+    tCardsEl.classList.toggle('active', isCards);
+  });
+});
+
+// ── SCROLL REVEAL (progressive enhancement; never leaves content hidden) ──
+document.body.classList.add('js-reveal');
+const revealEls = [...document.querySelectorAll('[data-reveal]')];
+function revealInView() {
+  const vh = window.innerHeight;
+  revealEls.forEach(el => {
+    if (el.classList.contains('vis')) return;
+    const r = el.getBoundingClientRect();
+    if (r.top < vh * 0.92 && r.bottom > 0) el.classList.add('vis');
+  });
+}
+let ticking = false;
+function onScroll() {
+  if (ticking) return;
+  ticking = true;
+  requestAnimationFrame(() => { revealInView(); ticking = false; });
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+window.addEventListener('resize', onScroll, { passive: true });
+revealInView();
+// Safety nets at several points — content is never left hidden, regardless of context
+setTimeout(revealInView, 200);
+document.addEventListener('DOMContentLoaded', revealInView);
+setTimeout(() => revealEls.forEach(el => el.classList.add('vis')), 1500);
+</script>
 </body>
 </html>
