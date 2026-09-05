@@ -329,7 +329,7 @@ body.vibrant .btn-white{color:var(--navy);}
 
 /* ── LOCATIONS ── */
 #standorte{background:var(--sec);}
-.loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-top:2.5rem;}
+.loc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem;margin-top:2.5rem;max-width:700px;margin-left:auto;margin-right:auto;}
 .loc-card{
   background:var(--white);border-radius:var(--r);
   padding:2rem;border-top:4px solid var(--terra);
@@ -477,7 +477,7 @@ body.js-reveal [data-reveal].vis{opacity:1;transform:none;}
     </div>
     <div data-reveal>
       <p class="lbl">Ihre Lehrerin</p>
-      <h2 class="h2">Hola! Ich bin Gloria.</h2>
+      <h2 class="h2">¡Hola! Ich bin Gloria.</h2>
       <p class="lead">Spanischlehrerin aus Monterrey, Mexiko – seit über 15 Jahren lebe und unterrichte ich in der Schweiz. Sprachen schaffen Verbindung, Nähe und neue Perspektiven.</p>
       <p style="color:var(--muted);line-height:1.8;margin-bottom:1.25rem;">Nach meinem Studium der Angewandten Linguistik in Mexiko und meinem Master in Deutsch als Fremdsprache in der Schweiz habe ich meine Leidenschaft zum Beruf gemacht. Seit über 13 Jahren begleite ich Menschen in Zürich auf ihrem Weg ins Spanische – für Reisen, den Beruf oder einfach aus Freude am Lernen.</p>
       <p style="color:var(--muted);line-height:1.8;margin-bottom:2rem;">Vitamina E steht für Energie, Leichtigkeit und echte Begegnungen. Für einen Unterricht, der motiviert, stärkt und Freude macht. Ich freue mich darauf, dich kennenzulernen!</p>
@@ -499,7 +499,7 @@ body.js-reveal [data-reveal].vis{opacity:1;transform:none;}
   <div style="text-align:center;margin-bottom:2rem">
     <p class="lbl">Kursangebot</p>
     <h2 class="h2">Die richtigen Kurse für dich.</h2>
-    <p class="lead" style="margin:0 auto 2rem">Alle Niveaustufen nach GER – von A1 bis C2. Jedes Niveau ist in drei Module unterteilt; ein Modul umfasst 10 Lektionen.</p>
+    <p class="lead" style="margin:0 auto 2rem">Alle Niveaustufen nach GER – von A1 bis C2. Jedes Niveau ist in drei Module unterteilt; ein Modul umfasst 10 Lektionen: Die Standardkurse sind in drei Module unterteilt. Jedes Modul umfasst 12 Lektionen.</p>
   </div>
   <div class="levels" data-reveal>
     <div class="lvl"><div class="lvl-code">A1</div><div class="lvl-name">Erste Schritte</div></div>
@@ -758,14 +758,9 @@ body.js-reveal [data-reveal].vis{opacity:1;transform:none;}
   <h2 class="h2">Standorte</h2>
   <div class="loc-grid" data-reveal>
     <div class="loc-card">
-      <h3>Manegg</h3>
-      <address>Spoom Green City (Regus)<br>Maneggstrasse 33<br>8041 Zürich</address>
-      <a href="https://maps.app.goo.gl/wynVdLRv6BMDCdy17" target="_blank" rel="noopener" class="loc-link">Auf Google Maps →</a>
-    </div>
-    <div class="loc-card">
-      <h3>Stauffacher</h3>
-      <address>Stauffacher Regus<br>Badenerstrasse 47<br>8004 Zürich</address>
-      <a href="https://maps.app.goo.gl/4KMKEnyEzt8JHHJ2A" target="_blank" rel="noopener" class="loc-link">Auf Google Maps →</a>
+      <h3>Zürich</h3>
+      <address>Zeughausstrasse 31<br>8004 Zürich</address>
+      <a href="https://share.google/zrnGJlObwDDANN9Tj" target="_blank" rel="noopener" class="loc-link">Auf Google Maps →</a>
     </div>
     <div class="loc-card">
       <h3>Online</h3>
@@ -791,10 +786,12 @@ body.js-reveal [data-reveal].vis{opacity:1;transform:none;}
         WhatsApp (Nummer eintragen)
       </a>
     </div>
-    <form class="cform" onsubmit="return false" data-reveal>
-      <div class="fg"><label>Name</label><input type="text" placeholder="Ihr Name"></div>
-      <div class="fg"><label>E-Mail</label><input type="email" placeholder="ihre@email.ch"></div>
-      <div class="fg"><label>Kurs / Frage</label><textarea placeholder="Ich interessiere mich für …"></textarea></div>
+    <form class="cform" action="https://api.web3forms.com/submit" method="POST" data-reveal>
+      <input type="hidden" name="access_key" value="90e3b506-1d6e-4e8b-8969-061331d0bf25">
+      <input type="hidden" name="subject" value="Vitamina E web contact form">
+      <div class="fg"><label>Name</label><input type="text" name="name" placeholder="Ihr Name" required></div>
+      <div class="fg"><label>E-Mail</label><input type="email" name="email" placeholder="ihre@email.ch" required></div>
+      <div class="fg"><label>Kurs / Frage</label><textarea name="message" placeholder="Ich interessiere mich für …" required></textarea></div>
       <button type="submit" class="btn-submit">Nachricht senden</button>
     </form>
   </div>
